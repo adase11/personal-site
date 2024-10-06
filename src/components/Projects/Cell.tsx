@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
 import React from 'react';
 import { IProject } from '../../data/projects';
-import PdfViewer from './Pdf';
+import PdfViewer from './PdfViewer';
 
 export interface ICell {
   data: IProject;
@@ -32,7 +32,7 @@ const Cell: React.FC<ICell> = ({ data }) => (
       ) : (
         <div></div>
       )}
-      {data.pdf ? PdfViewer(data.pdf) : <div></div>}
+      {data.pdf ? <PdfViewer path={data.pdf}></PdfViewer> : <div></div>}
       <div className="description">
         <p>{data.desc}</p>
       </div>
