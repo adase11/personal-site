@@ -12,5 +12,5 @@
   },
   "include": [
     "./src/"
-  ]
+, "src/lib/pdf.worker.min.js"  ]
 }
