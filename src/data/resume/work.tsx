@@ -31,7 +31,7 @@ const work: IWorkExperience[] = [
     summary:
       'I lead a team responsible for developing new products and applications, including Equitize, which has facilitated millions of dollars in transactions, as well as a new AI/ML-focused project. I oversee the architecture, collaborate with executive teams, and contribute to back-end development.',
     highlights: [
-      'Manage a team of three engineers (two principal and one senior) with a focus on AI/ML products.',
+      'Manage a team of engineers with a focus on building AI enabled, modern web applications.',
       'Lead development of Equitize, facilitating millions of dollars in transactions.',
       'Contribute to backend systems using Spring Boot, Java 21, Postgres, Vue3, and AWS infrastructure.',
       'Coordinate with the our executive team on project requirements and deliverables.',

@@ -1,11 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Courses from '../components/Resume/Courses';
 import Education from '../components/Resume/Education';
 import Experience from '../components/Resume/Experience';
-import References from '../components/Resume/References';
 import Skills from '../components/Resume/Skills';
-import courses from '../data/resume/courses';
 import degrees from '../data/resume/degrees';
 import { categories, skills } from '../data/resume/skills';
 import work from '../data/resume/work';
@@ -16,8 +13,8 @@ const sections = {
   Education: () => <Education data={degrees} />,
   Experience: () => <Experience data={work} />,
   Skills: () => <Skills skills={skills} categories={categories} />,
-  Courses: () => <Courses data={courses} />,
-  References: () => <References />,
+  // Courses: () => <Courses data={courses} />,
+  // References: () => <References />,
 };
 
 const Resume = () => (

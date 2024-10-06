@@ -1,4 +1,3 @@
-import { Worker } from '@react-pdf-viewer/core';
 import React, { Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Main from './layouts/Main';
@@ -18,23 +17,23 @@ const Resume = React.lazy(() => import('./pages/Resume'));
 const Stats = React.lazy(() => import('./pages/Stats'));
 
 const App = () => (
-  <Worker
-    workerUrl={`https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js`}
-  >
-    <BrowserRouter basename={PUBLIC_URL}>
-      <Suspense fallback={<Main />}>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/stats" element={<Stats />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/resume" element={<Resume />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Suspense>
-    </BrowserRouter>
-  </Worker>
+  // <Worker
+  //   workerUrl={`https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js`}
+  // >
+  <BrowserRouter basename={PUBLIC_URL}>
+    <Suspense fallback={<Main />}>
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/stats" element={<Stats />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/resume" element={<Resume />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Suspense>
+  </BrowserRouter>
+  // </Worker>
 );
 
 export default App;
