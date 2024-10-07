@@ -13,7 +13,7 @@ const SideBar = () => {
         <Link href="/" passHref>
           <a className="logo">
             <Image
-              src={`/images/me.jpeg}`}
+              src="/images/me.jpeg"
               alt={'austin'}
               width={500}
               height={300}
