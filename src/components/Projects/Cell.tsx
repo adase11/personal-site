@@ -1,12 +1,14 @@
 import dayjs from 'dayjs';
-import React, { lazy, Suspense } from 'react';
+import React, { Suspense, lazy } from 'react';
 import { IProject } from '../../data/projects';
 
 const PdfViewer = lazy(() => import('./PdfViewer'));
 
+
 export interface ICell {
   data: IProject;
 }
+
 
 const Cell: React.FC<ICell> = ({ data }) => (
   <div className="cell-container">
@@ -30,13 +32,11 @@ const Cell: React.FC<ICell> = ({ data }) => (
       ) : (
         <div></div>
       )}
-      {data.pdf ? (
+      {data.pdf ? 
         <Suspense fallback={<div>Loading PDF...</div>}>
-          {<PdfViewer data={{ path: data.pdf }} />}
+          { <PdfViewer data={{path: data.pdf}} />}
         </Suspense>
-      ) : (
-        <div></div>
-      )}
+      : <div></div>}
       <div className="description">
         <p>{data.desc}</p>
       </div>
