@@ -1,9 +1,6 @@
 # Simple workflow for deploying static content to GitHub Pages
 name: Deploy static content to Pages
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE20: true
-
 on:
   # Runs on pushes targeting the default branch
   push:
@@ -30,6 +27,8 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE20: true
     runs-on: ubuntu-20.04
     timeout-minutes: 10
     steps:
@@ -56,7 +55,7 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v4
         with:
           path: "out"
       - name: Deploy to GitHub Pages
