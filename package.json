@@ -13,10 +13,10 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next lint --fix && next build && node scripts/post-export.js",
+    "build": "next lint --fix && next build && node scripts/post-export.cjs",
     "start": "next lint --fix && next build && next start",
     "lint": "next lint --fix",
-    "predeploy": "next build && node scripts/post-export.js",
+    "predeploy": "next build && node scripts/post-export.cjs",
     "test": ""
   },
   "dependencies": {
