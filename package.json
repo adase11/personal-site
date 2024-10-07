@@ -1,5 +1,6 @@
 {
   "name": "personal-site",
+  "type": "module",
   "version": "4.0.0",
   "homepage": "https://dase.dev/",
   "license": "MIT",
@@ -11,12 +12,10 @@
     "node": "20"
   },
   "scripts": {
-    "analyze": "npm run build && source-map-explorer build/static/js/*.chunk.js",
-    "build": "rimraf ./build && react-scripts build",
-    "predeploy": "npm run build && react-snap",
-    "start": "react-scripts start",
-    "test": "npx jest",
-    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}' --fix"
+    "dev": "next dev",
+    "build": "next lint --fix && next build",
+    "start": "next lint --fix && next build && next start",
+    "lint": "next lint --fix"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
@@ -24,27 +23,30 @@
     "@fortawesome/free-regular-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "0.2.2",
     "@react-pdf-viewer/core": "^3.12.0",
-    "@types/react": "18.3.11",
-    "@types/react-burger-menu": "2.8.7",
-    "@types/react-dom": "18.3.0",
-    "@types/react-router-dom": "5.3.3",
+    "core-js": "^3.38.1",
     "dayjs": "^1.11.13",
     "markdown-to-jsx": "^7.5.0",
+    "next": "^14.2.14",
+    "pdfjs-dist": "^3.11.174",
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
     "react-burger-menu": "^3.0.9",
-    "react-dom": "18.3.1",
+    "react-dom": "^18.3.1",
     "react-ga": "3.3.1",
     "react-helmet-async": "^2.0.5",
-    "react-router-dom": "^6.26.2",
-    "react-scripts": "5.0.1"
+    "react-pdf": "^9.1.1"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^16.0.1",
     "@testing-library/user-event": "^14.5.2",
+    "@types/node": "^22.7.4",
+    "@types/react": "^18.3.11",
+    "@types/react-burger-menu": "^2.8.7",
+    "@typescript-eslint/eslint-plugin": "^8.8.0",
     "eslint": "^8.57.1",
     "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-next": "^14.2.14",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-jsx-a11y": "^6.10.0",
@@ -52,25 +54,12 @@
     "eslint-plugin-react": "^7.37.1",
     "prettier": "^3.3.3",
     "prettier-plugin-organize-imports": "^4.1.0",
-    "react-snap": "^1.23.0",
     "rimraf": "^6.0.1",
     "sass": "^1.79.4",
     "source-map-explorer": "^2.5.3",
-    "source-map-loader": "^5.0.0",
-    "ts-loader": "9.5.1",
-    "typescript": "4.1.6",
-    "webpack": "5.95.0"
+    "typescript": "^5.6.2"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+  "browserslist": [
+    "> 0.01%"
+  ]
 }

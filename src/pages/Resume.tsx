@@ -1,5 +1,4 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import Education from '../components/Resume/Education';
 import Experience from '../components/Resume/Experience';
 import Skills from '../components/Resume/Skills';
@@ -12,7 +11,7 @@ import Main from '../layouts/Main';
 const sections = {
   Education: () => <Education data={degrees} />,
   Experience: () => <Experience data={work} />,
-  Skills: () => <Skills skills={skills} categories={categories} />,
+  Skills: () => <Skills skills={skills} categories={categories} />
   // Courses: () => <Courses data={courses} />,
   // References: () => <References />,
 };
@@ -23,7 +22,9 @@ const Resume = () => (
       <header>
         <div className="title">
           <h2>
-            <Link to="resume">Resume</Link>
+            <Link href="resume" passHref>
+              Resume
+            </Link>
           </h2>
           <div className="link-container">
             {Object.keys(sections).map((sec) => (

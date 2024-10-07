@@ -1,23 +1,35 @@
-import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { ICategory, ISkill } from '../../data/resume/skills';
 import CategoryButton from './Skills/CategoryButton';
 import SkillBar from './Skills/SkillBar';
 
-const Skills = ({ skills, categories }) => {
+export interface ISkillsComponent {
+  skills: ISkill[];
+  categories: ICategory[];
+}
+
+const Skills = (data: ISkillsComponent) => {
   const initialButtons = Object.fromEntries(
-    [['All', false]].concat(categories.map(({ name }) => [name, false]))
+    [['All', false]].concat(data.categories.map(({ name }) => [name, false]))
   );
 
   const [buttons, setButtons] = useState(initialButtons);
 
-  const handleChildClick = (label) => {
+  interface INewButtons {
+    All: boolean;
+    [key: string]: any;
+  }
+
+  const handleChildClick = (label: string) => {
     // Toggle button that was clicked. Turn all other buttons off.
-    const newButtons = Object.keys(buttons).reduce(
-      (obj, key) => ({
+    const newButtons: INewButtons = Object.keys(buttons).reduce(
+      (obj: INewButtons, key) => ({
         ...obj,
-        [key]: label === key && !buttons[key],
+        [key]: label === key && !buttons[key]
       }),
-      {}
+      {
+        All: false
+      }
     );
     // Turn on 'All' button if other buttons are off
     newButtons.All = !Object.keys(buttons).some((key) => newButtons[key]);
@@ -31,7 +43,7 @@ const Skills = ({ skills, categories }) => {
       'All'
     );
 
-    const comparator = (a, b) => {
+    const comparator = (a: ISkill, b: ISkill) => {
       let ret = 0;
       if (a.competency > b.competency) ret = -1;
       else if (a.competency < b.competency) ret = 1;
@@ -42,11 +54,11 @@ const Skills = ({ skills, categories }) => {
       return ret;
     };
 
-    return skills
+    return data.skills
       .sort(comparator)
       .filter((skill) => actCat === 'All' || skill.category.includes(actCat))
       .map((skill) => (
-        <SkillBar categories={categories} data={skill} key={skill.title} />
+        <SkillBar categories={data.categories} data={skill} key={skill.title} />
       ));
   };
 
@@ -74,27 +86,6 @@ const Skills = ({ skills, categories }) => {
       <div className="skill-row-container">{getRows()}</div>
     </div>
   );
-};
-
-Skills.propTypes = {
-  skills: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string,
-      competency: PropTypes.number,
-      category: PropTypes.arrayOf(PropTypes.string),
-    })
-  ),
-  categories: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string,
-      color: PropTypes.string,
-    })
-  ),
-};
-
-Skills.defaultProps = {
-  skills: [],
-  categories: [],
 };
 
 export default Skills;

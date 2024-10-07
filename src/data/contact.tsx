@@ -9,23 +9,23 @@ const data = [
   {
     link: 'https://github.com/adase11',
     label: 'Github',
-    icon: faGithub,
+    icon: faGithub
   },
   {
     link: 'https://www.linkedin.com/in/austin-dase-40188b63/',
     label: 'LinkedIn',
-    icon: faLinkedinIn,
+    icon: faLinkedinIn
   },
   {
     link: 'https://x.com/adase01',
     label: 'Twitter',
-    icon: faTwitter,
+    icon: faTwitter
   },
   {
     link: 'mailto:hi@dase.dev',
     label: 'Email',
-    icon: faEnvelope,
-  },
+    icon: faEnvelope
+  }
 ];
 
 export default data;

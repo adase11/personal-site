@@ -34,8 +34,8 @@ const work: IWorkExperience[] = [
       'Manage a team of engineers with a focus on building AI enabled, modern web applications.',
       'Lead development of Equitize, facilitating millions of dollars in transactions.',
       'Contribute to backend systems using Spring Boot, Java 21, Postgres, Vue3, and AWS infrastructure.',
-      'Coordinate with the our executive team on project requirements and deliverables.',
-    ],
+      'Coordinate with the our executive team on project requirements and deliverables.'
+    ]
   },
   {
     name: 'Fundrise',
@@ -49,8 +49,8 @@ const work: IWorkExperience[] = [
       'Rewrote ACH processing software, handling over $1 billion in transactions in the first year.',
       'Integrated Stripe for debit card funding, processing over 40,000 transactions in the first year.',
       'Developed a new integration with our transfer agent, automating reconciliation of shareholdings.',
-      'Created a test data framework used department-wide for local test data generation.',
-    ],
+      'Created a test data framework used department-wide for local test data generation.'
+    ]
   },
   {
     name: 'Fundrise',
@@ -63,8 +63,8 @@ const work: IWorkExperience[] = [
     highlights: [
       'Developed the IRA product offering from inception to deployment.',
       'Built and designed the backend processing of our Short Term Notes product, a new business offering.',
-      'Enhanced internal KYC and investment approval processes for increased efficiency.',
-    ],
+      'Enhanced internal KYC and investment approval processes for increased efficiency.'
+    ]
   },
   {
     name: 'Travelers',
@@ -76,8 +76,8 @@ const work: IWorkExperience[] = [
       'Worked on internal tools and machine learning projects at Travelers. Developed deployment execution management tools and handled Java/Spring, Python, and SQL-based systems.',
     highlights: [
       'Developed internal tooling using Java, Spring Boot, and Python.',
-      'Collaborated on machine learning projects, utilizing database systems like SQLServer and Oracle.',
-    ],
+      'Collaborated on machine learning projects, utilizing database systems like SQLServer and Oracle.'
+    ]
   },
   {
     name: 'Travelers',
@@ -89,8 +89,8 @@ const work: IWorkExperience[] = [
       'Led development of internal applications and tooling for Travelers using Java and Spring Boot.',
     highlights: [
       'Converted a legacy internal tooling suite from Perl to Python and web-based Java Spring Boot applications.',
-      'Worked with Python and Perl systems for internal applications.',
-    ],
+      'Worked with Python and Perl systems for internal applications.'
+    ]
   },
   {
     name: 'Travelers',
@@ -102,9 +102,9 @@ const work: IWorkExperience[] = [
       'Started my career at Travelers working on internal development projects involving Java, Python, and SQL-based systems.',
     highlights: [
       'Developed internal tools using Perl, Java, and Spring Boot.',
-      'Managed nightly deployments as part of the release train.',
-    ],
-  },
+      'Managed nightly deployments as part of the release train.'
+    ]
+  }
 ];
 
 export default work;

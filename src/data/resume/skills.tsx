@@ -1,70 +1,70 @@
-export interface Skill {
+export interface ISkill {
   title: string;
   competency: number;
   category: string[];
 }
 
-const skills: Skill[] = [
+const skills: ISkill[] = [
   {
     title: 'Java',
     competency: 5,
-    category: ['Web Development', 'Languages'],
+    category: ['Web Development', 'Languages']
   },
   {
     title: 'AWS',
     competency: 5,
-    category: ['Web Development', 'Tools'],
+    category: ['Web Development', 'Tools']
   },
   {
     title: 'Spring',
     competency: 4,
-    category: ['Web Development', 'Java'],
+    category: ['Web Development', 'Java']
   },
   {
     title: 'Postgres',
     competency: 4,
-    category: ['Web Development', 'Databases'],
+    category: ['Web Development', 'Databases']
   },
   {
     title: 'MySQL',
     competency: 4,
-    category: ['Web Development', 'Databases'],
+    category: ['Web Development', 'Databases']
   },
   {
     title: 'TypeScript',
     competency: 3,
-    category: ['Web Development', 'Languages'],
+    category: ['Web Development', 'Languages']
   },
   {
     title: 'Vue',
     competency: 3,
-    category: ['Web Development', 'JavaScript'],
+    category: ['Web Development', 'JavaScript']
   },
   {
     title: 'Databricks',
     competency: 3,
-    category: ['Data Engineering', 'ML Engineering'],
+    category: ['Data Engineering', 'ML Engineering']
   },
   {
     title: 'Python',
     competency: 5,
-    category: ['Languages', 'Python', 'ML Engineering'],
+    category: ['Languages', 'Python', 'ML Engineering']
   },
   {
     title: 'Machine Learning',
     competency: 4,
-    category: ['ML Engineering'],
+    category: ['ML Engineering']
   },
   {
     title: 'Stripe',
     competency: 3,
-    category: ['Web Development', 'Tools'],
+    category: ['Web Development', 'Tools']
   },
   {
     title: 'Auth0/Okta',
     competency: 3,
-    category: ['Web Development', 'Tools'],
-  },
+    category: ['Web Development', 'Tools']
+  }
 ].map((skill) => ({ ...skill, category: skill.category.sort() }));
 
 // this is a list of colors that I like. The length should be === to the
@@ -80,24 +80,24 @@ const colors = [
   '#c3423f',
   '#d75858',
   '#747fff',
-  '#64cb7b',
+  '#64cb7b'
 ];
 
-export interface Category {
+export interface ICategory {
   name: string;
   color: string;
 }
 
-const categories: Category[] = [
+const categories: ICategory[] = [
   ...new Set(
     skills
       .flatMap((skill) => skill.category)
       .sort()
       .map((category, index) => ({
         name: category,
-        color: colors[index],
+        color: colors[index]
       }))
-  ),
+  )
 ];
 
 export { categories, skills };

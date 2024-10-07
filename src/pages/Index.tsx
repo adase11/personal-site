@@ -1,5 +1,4 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import Main from '../layouts/Main';
 
 const Index = () => (
@@ -13,7 +12,9 @@ const Index = () => (
       <header>
         <div className="title">
           <h2>
-            <Link to="/">About this site</Link>
+            <Link href="/" passHref>
+              <a>About this site</a>
+            </Link>
           </h2>
           <p>
             A beautiful, responsive, statically-generated, react application
@@ -22,15 +23,29 @@ const Index = () => (
         </div>
       </header>
       <p>
-        {' '}
         Welcome to my website. Please feel free to read more{' '}
-        <Link to="/about">about me</Link>, or you can check out my{' '}
-        <Link to="/resume">resume</Link>, <Link to="/projects">projects</Link>,{' '}
-        view <Link to="/stats">site statistics</Link>, or{' '}
-        <Link to="/contact">contact</Link> me.
+        <Link href="/about" passHref>
+          <a>about me</a>
+        </Link>
+        , or you can check out my{' '}
+        <Link href="/resume" passHref>
+          <a>resume</a>
+        </Link>
+        ,{' '}
+        <Link href="/projects" passHref>
+          <a>projects</a>
+        </Link>
+        , view{' '}
+        <Link href="/stats" passHref>
+          <a>site statistics</a>
+        </Link>
+        , or{' '}
+        <Link href="/contact" passHref>
+          <a>contact</a>
+        </Link>{' '}
+        me.
       </p>
       <p>
-        {' '}
         Source available{' '}
         <a href="https://github.com/adase11/personal-site">here</a>.
       </p>

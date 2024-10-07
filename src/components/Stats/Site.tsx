@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import initialData from '../../data/stats/site';
 import Table from './Table';
 
@@ -17,7 +17,7 @@ const Stats = () => {
         // update value if value was returned by call to github
         value: Object.keys(resData).includes(field.key!)
           ? resData[field.key!]
-          : field.value,
+          : field.value
       }))
     );
   }, []);

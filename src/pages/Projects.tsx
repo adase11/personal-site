@@ -1,5 +1,4 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import Cell from '../components/Projects/Cell';
 import data from '../data/projects';
 import Main from '../layouts/Main';
@@ -10,7 +9,9 @@ const Projects = () => (
       <header>
         <div className="title">
           <h2>
-            <Link to="/projects">Projects</Link>
+            <Link href="/projects" passHref>
+              Projects
+            </Link>
           </h2>
         </div>
       </header>

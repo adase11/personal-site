@@ -1,5 +1,4 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import ContactIcons from '../components/Contact/ContactIcons';
 import EmailLink from '../components/Contact/EmailLink';
 import Main from '../layouts/Main';
@@ -13,7 +12,9 @@ const Contact = () => (
       <header>
         <div className="title">
           <h2>
-            <Link to="/contact">Contact</Link>
+            <Link href="/contact" passHref>
+              <a>Contact</a>
+            </Link>
           </h2>
         </div>
       </header>

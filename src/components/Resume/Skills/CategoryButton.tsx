@@ -1,20 +1,25 @@
 import PropTypes from 'prop-types';
-import React from 'react';
 
-const CategoryButton = ({ handleClick, active, label }) => (
+export interface ICategoryButton {
+  handleClick: (label: string) => void;
+  active: any;
+  label: string;
+}
+
+const CategoryButton = (data: ICategoryButton) => (
   <button
-    className={`skillbutton ${active[label] ? 'skillbutton-active' : ''}`}
+    className={`skillbutton ${data.active[data.label] ? 'skillbutton-active' : ''}`}
     type="button"
-    onClick={() => handleClick(label)}
+    onClick={() => data.handleClick(data.label)}
   >
-    {label}
+    {data.label}
   </button>
 );
 
 CategoryButton.propTypes = {
   label: PropTypes.string.isRequired,
   handleClick: PropTypes.func.isRequired,
-  active: PropTypes.objectOf(PropTypes.bool.isRequired).isRequired,
+  active: PropTypes.objectOf(PropTypes.bool.isRequired).isRequired
 };
 
 export default CategoryButton;

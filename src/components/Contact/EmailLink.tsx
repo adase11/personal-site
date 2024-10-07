@@ -1,8 +1,7 @@
-import PropTypes from 'prop-types';
 import React, { useEffect, useRef, useState } from 'react';
 
 // Validates the first half of an email address.
-const validateText = (text) => {
+const validateText = (text: string) => {
   // NOTE: Passes RFC 5322 but not tested on google's standard.
   // eslint-disable-next-line no-useless-escape
   const re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))$/;
@@ -24,7 +23,7 @@ const messages = [
   'help',
   'admin',
   'or-I-really-like-your-website',
-  'thanks',
+  'thanks'
 ];
 
 const useInterval = (callback: () => void, delay: number | null) => {
@@ -47,7 +46,13 @@ const useInterval = (callback: () => void, delay: number | null) => {
   }, [delay]);
 };
 
-const EmailLink = ({ loopMessage }) => {
+interface ILoopMessage {
+  data?: {
+    loopMessage: boolean;
+  };
+}
+
+const EmailLink = (loopMessage: ILoopMessage) => {
   const hold = 50; // ticks to wait after message is complete before rendering next message
   const delay = 50; // tick length in mS
 
@@ -93,14 +98,6 @@ const EmailLink = ({ loopMessage }) => {
       </a>
     </div>
   );
-};
-
-EmailLink.defaultProps = {
-  loopMessage: false,
-};
-
-EmailLink.propTypes = {
-  loopMessage: PropTypes.bool,
 };
 
 export default EmailLink;

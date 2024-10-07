@@ -17,7 +17,7 @@ const data: IProject[] = [
     image: '',
     date: '2019-12-01',
     desc: '',
-    pdf: 'papers/Automated-Facial-Exp.pdf',
+    pdf: 'papers/Automated-Facial-Exp.pdf'
   },
   {
     title:
@@ -26,7 +26,7 @@ const data: IProject[] = [
     image: '',
     date: '2019-03-01',
     desc: '',
-    pdf: 'papers/LitReview.pdf',
+    pdf: 'papers/LitReview.pdf'
   },
   {
     title: 'Machine Learning Feature Selection and Analysis',
@@ -34,8 +34,8 @@ const data: IProject[] = [
     image: '',
     date: '2018-12-01',
     desc: '',
-    pdf: 'papers/MachineLearningFeatureSelectionAndAnalysis-Dase.pdf',
-  },
+    pdf: 'papers/MachineLearningFeatureSelectionAndAnalysis-Dase.pdf'
+  }
 ];
 
 export default data;

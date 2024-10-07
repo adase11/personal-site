@@ -1,7 +1,8 @@
 import dayjs from 'dayjs';
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { IProject } from '../../data/projects';
-import PdfViewer from './PdfViewer';
+
+const PdfViewer = lazy(() => import('./PdfViewer'));
 
 export interface ICell {
   data: IProject;
@@ -24,15 +25,18 @@ const Cell: React.FC<ICell> = ({ data }) => (
       </header>
       {data.image ? (
         <a href={data.link} className="image">
-          <img
-            src={`${process.env.PUBLIC_URL}${data.image}`}
-            alt={data.title}
-          />
+          <img src={`/${data.image}`} alt={data.title} />
         </a>
       ) : (
         <div></div>
       )}
-      {data.pdf ? PdfViewer(data.pdf) : <div></div>}
+      {data.pdf ? (
+        <Suspense fallback={<div>Loading PDF...</div>}>
+          {<PdfViewer data={{ path: data.pdf }} />}
+        </Suspense>
+      ) : (
+        <div></div>
+      )}
       <div className="description">
         <p>{data.desc}</p>
       </div>

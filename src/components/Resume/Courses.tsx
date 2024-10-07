@@ -1,8 +1,8 @@
 import React from 'react';
-import { CourseInfo } from '../../data/resume/courses';
+import { ICourseInfo } from '../../data/resume/courses';
 import Course from './Courses/Course';
 
-const getRows = (courses: CourseInfo[]) =>
+const getRows = (courses: ICourseInfo[]) =>
   courses
     .sort((a, b) => {
       let ret = 0;
@@ -20,11 +20,11 @@ const getRows = (courses: CourseInfo[]) =>
       />
     ));
 
-export interface Courses {
-  data: CourseInfo[];
+export interface ICourses {
+  data: ICourseInfo[];
 }
 
-const Courses: React.FC<Courses> = ({ data }) => (
+const Courses: React.FC<ICourses> = ({ data }) => (
   <div className="courses">
     <div className="link-to" id="courses" />
     <div className="title">

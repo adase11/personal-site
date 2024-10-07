@@ -31,9 +31,9 @@ export const UniversityOfMaryland: University = {
     urlString: smithSchool,
     department: {
       name: 'Information Systems',
-      urlString: smithInfoSystems,
-    },
-  },
+      urlString: smithInfoSystems
+    }
+  }
 };
 
 const towson = 'https://www.towson.edu';
@@ -50,7 +50,7 @@ export const TowsonUniversity: University = {
     urlString: fisherSchool,
     department: {
       name: '',
-      urlString: towsonCompSci,
-    },
-  },
+      urlString: towsonCompSci
+    }
+  }
 };

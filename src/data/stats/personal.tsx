@@ -1,4 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import { ITableData } from '../../components/Stats/Table';
+
+export interface IPersonalData extends ITableData {}
 
 const Age = () => {
   const [age, setAge] = useState<string>();
@@ -23,11 +26,11 @@ const Age = () => {
   return <>{age}</>;
 };
 
-const data = [
+const data: IPersonalData[] = [
   {
     key: 'age',
     label: 'Current age',
-    value: <Age />,
+    value: <Age />
   },
   // {
   //   key: 'countries',
@@ -38,8 +41,8 @@ const data = [
   {
     key: 'location',
     label: 'Current city',
-    value: 'Washington, DC',
-  },
+    value: 'Washington, DC'
+  }
 ];
 
 export default data;

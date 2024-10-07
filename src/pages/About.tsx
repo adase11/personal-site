@@ -1,19 +1,19 @@
 import Markdown from 'markdown-to-jsx';
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import Main from '../layouts/Main';
 
 const About = () => {
   const [markdown, setMarkdown] = useState('');
 
   useEffect(() => {
-    import('../data/about.md').then((res) => {
-      fetch(res.default)
-        .then((r) => r.text())
-        .then(setMarkdown);
-    });
-  });
+    // Fetch the Markdown file directly from the public folder
+    fetch('/data/about.md')
+      .then((r) => r.text())
+      .then(setMarkdown);
+  }, []);
 
+  // Count words in the Markdown content
   const count = markdown
     .split(/\s+/)
     .map((s) => s.replace(/\W/g, ''))
@@ -25,7 +25,9 @@ const About = () => {
         <header>
           <div className="title">
             <h2>
-              <Link to="/about">About Me</Link>
+              <Link href="/about" passHref>
+                <a>About Me</a>
+              </Link>
             </h2>
             <p>(in about {count} words)</p>
           </div>

@@ -1,21 +1,28 @@
+import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { initialize, pageview, set } from 'react-ga';
-import { useLocation } from 'react-router-dom';
 
-const { NODE_ENV, REACT_APP_GA_TRACKING_ID } = process.env;
+// Use NEXT_PUBLIC_ for public environment variables in Next.js
+const { NEXT_PUBLIC_GA_TRACKING_ID } = process.env;
+const isProduction = process.env.NODE_ENV === 'production';
 
-if (NODE_ENV === 'production') {
-  initialize(REACT_APP_GA_TRACKING_ID!);
+// Only initialize Google Analytics if in production
+if (isProduction && NEXT_PUBLIC_GA_TRACKING_ID) {
+  initialize(NEXT_PUBLIC_GA_TRACKING_ID);
+}
+
+// Initialize Google Analytics in production
+if (isProduction) {
+  initialize(NEXT_PUBLIC_GA_TRACKING_ID!);
 }
 
 const Analytics = () => {
-  const { pathname } = useLocation();
+  const router = useRouter();
+  const { pathname } = router;
 
   useEffect(() => {
-    if (NODE_ENV === 'production') {
-      set({
-        page: pathname,
-      });
+    if (isProduction) {
+      set({ page: pathname });
       pageview(pathname);
     }
   }, [pathname]);

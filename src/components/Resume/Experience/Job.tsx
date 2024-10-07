@@ -8,7 +8,7 @@ export interface IJob {
 }
 
 const Job: React.FC<IJob> = ({
-  data: { name, position, url, startDate, endDate, summary, highlights },
+  data: { name, position, url, startDate, endDate, summary, highlights }
 }) => (
   <article className="jobs-container">
     <header>
@@ -27,10 +27,10 @@ const Job: React.FC<IJob> = ({
           overrides: {
             p: {
               props: {
-                className: 'summary',
-              },
-            },
-          },
+                className: 'summary'
+              }
+            }
+          }
         }}
       >
         {summary}

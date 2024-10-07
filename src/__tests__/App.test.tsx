@@ -4,7 +4,6 @@
 
 import '@testing-library/jest-dom';
 import '@testing-library/react';
-import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { act } from 'react-dom/test-utils';
 import App from '../App';
@@ -16,7 +15,7 @@ describe('renders the app', () => {
   global.fetch = jest.fn(() =>
     Promise.resolve({
       json: jsonMock,
-      text: textMock,
+      text: textMock
     })
   );
   // mocks the scrollTo API used when navigating to a new page.

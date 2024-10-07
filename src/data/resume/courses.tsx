@@ -1,12 +1,12 @@
 import { University } from '../../constants/University';
 
-export interface CourseInfo {
+export interface ICourseInfo {
   title: string;
   number: string;
   link: string;
   university: University;
 }
 
-const courses: CourseInfo[] = [];
+const courses: ICourseInfo[] = [];
 
 export default courses;

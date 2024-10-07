@@ -1,28 +1,12 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import { ITableData } from './Table';
 
-const TableRow = ({ label, link, value, format }) => (
+const TableRow = ({ label, link, value, format }: ITableData) => (
   <tr>
     <td width="70%">{label}</td>
-    <td>{link ? <a href={link}>{format(value)}</a> : format(value)}</td>
+    <td>
+      {link && format && value ? <a href={link}>{format(value)}</a> : value}
+    </td>
   </tr>
 );
-
-TableRow.propTypes = {
-  format: PropTypes.func,
-  label: PropTypes.string.isRequired,
-  link: PropTypes.string,
-  value: PropTypes.oneOfType([
-    PropTypes.element,
-    PropTypes.number,
-    PropTypes.string,
-  ]),
-};
-
-TableRow.defaultProps = {
-  format: (x) => x,
-  link: null,
-  value: null,
-};
 
 export default TableRow;
