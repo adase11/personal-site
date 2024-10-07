@@ -47,3 +47,8 @@ build/
 
 # Nohup
 nohup.out
+
+#build folders
+.next
+out
+.dist
