@@ -15,7 +15,8 @@
     "dev": "next dev",
     "build": "next lint --fix && next build",
     "start": "next lint --fix && next build && next start",
-    "lint": "next lint --fix"
+    "lint": "next lint --fix",
+    "predeploy": "next build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
