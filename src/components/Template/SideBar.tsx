@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import ContactIcons from '../Contact/ContactIcons';
@@ -11,7 +12,13 @@ const SideBar = () => {
       <section id="intro">
         <Link href="/" passHref>
           <a className="logo">
-            <img src={`/images/me.jpeg`} alt="" />
+            <Image
+              src={`/images/me.jpeg}`}
+              alt={'austin'}
+              width={500}
+              height={300}
+              layout="responsive"
+            />
           </a>
         </Link>
         <header>
