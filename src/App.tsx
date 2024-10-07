@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Main from './layouts/Main';
-import './static/css/main.scss'; // All of our styles
+import './static/css/main.scss';
 
 const { PUBLIC_URL } = process.env;
 
@@ -17,9 +17,6 @@ const Resume = React.lazy(() => import('./pages/Resume'));
 const Stats = React.lazy(() => import('./pages/Stats'));
 
 const App = () => (
-  // <Worker
-  //   workerUrl={`https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js`}
-  // >
   <BrowserRouter basename={PUBLIC_URL}>
     <Suspense fallback={<Main />}>
       <Routes>
@@ -33,7 +30,6 @@ const App = () => (
       </Routes>
     </Suspense>
   </BrowserRouter>
-  // </Worker>
 );
 
 export default App;

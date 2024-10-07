@@ -1,21 +1,16 @@
+import { Viewer, Worker } from '@react-pdf-viewer/core';
+import '@react-pdf-viewer/core/lib/styles/index.css';
 import React from 'react';
 
-export interface IPdf {
-  path: string;
-}
-
-interface PdfViewerProps {
-  pdf: IPdf;
-}
-
-const PdfViewer: React.FC<PdfViewerProps> = ({ pdf }) => {
+const PdfViewer = (path: string) => {
   return (
     <div style={{ height: '750px' }}>
-      <div>
-        <iframe title="pdf" src={pdf.path} width="100%" height="500px" />
-      </div>
+      <Worker
+        workerUrl={`https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js`}
+      >
+        <Viewer fileUrl={path} />
+      </Worker>
     </div>
   );
 };
-
 export default PdfViewer;

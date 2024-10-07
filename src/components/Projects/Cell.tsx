@@ -32,11 +32,7 @@ const Cell: React.FC<ICell> = ({ data }) => (
       ) : (
         <div></div>
       )}
-      {data.pdf ? (
-        <PdfViewer pdf={{ path: data.pdf }}></PdfViewer>
-      ) : (
-        <div></div>
-      )}
+      {data.pdf ? PdfViewer(data.pdf) : <div></div>}
       <div className="description">
         <p>{data.desc}</p>
       </div>
