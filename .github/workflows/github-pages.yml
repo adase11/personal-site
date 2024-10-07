@@ -43,7 +43,6 @@ jobs:
         shell: bash
         run: |
          npm run build
-         npm run export
         env:
           NODE_ENV: production
           # Remove this line if you would like to skip using google analytics
