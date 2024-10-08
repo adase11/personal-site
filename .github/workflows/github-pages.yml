@@ -59,7 +59,7 @@ jobs:
 
       - name: Upload artifact
         id: upload
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v2
         with:
           path: "out"  # Ensure 'out' is the correct directory for your static files
           name: github-pages  # Artifact name
