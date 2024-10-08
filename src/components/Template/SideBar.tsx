@@ -1,4 +1,4 @@
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import ContactIcons from '../Contact/ContactIcons';
@@ -11,15 +11,18 @@ const SideBar = () => {
     <section id="sidebar">
       <section id="intro">
         <Link href="/" passHref className="logo">
-
           <Image
+            priority={true}
             src="/images/me.jpeg"
             alt={'austin'}
             width={500}
             height={300}
-            layout="responsive"
+            sizes="100vw"
+            style={{
+              width: '100%',
+              height: 'auto'
+            }}
           />
-
         </Link>
         <header>
           <h2>Austin Dase</h2>

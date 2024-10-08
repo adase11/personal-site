@@ -14,7 +14,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next lint --fix && next build && node scripts/post-export.cjs",
-    "start": "next lint --fix && next build && next start",
+    "start": "next lint --fix && next build && npx serve@latest out",
     "lint": "next lint --fix",
     "predeploy": "next build && node scripts/post-export.cjs",
     "test": ""
@@ -25,6 +25,8 @@
     "@fortawesome/free-regular-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "0.2.2",
     "@react-pdf-viewer/core": "^3.12.0",
+    "@realfavicongenerator/generate-favicon": "^0.4.1",
+    "@realfavicongenerator/image-adapter-node": "^0.4.1",
     "core-js": "^3.38.1",
     "dayjs": "^1.11.13",
     "markdown-to-jsx": "^7.5.0",

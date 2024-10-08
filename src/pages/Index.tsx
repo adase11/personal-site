@@ -17,8 +17,8 @@ const Index = () => (
             </Link>
           </h2>
           <p>
-            A beautiful, responsive, statically-generated, react application
-            written with modern Javascript.
+            A responsive, statically-generated, react application written with
+            modern Javascript.
           </p>
         </div>
       </header>
