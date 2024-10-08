@@ -10,16 +10,16 @@ const SideBar = () => {
   return (
     <section id="sidebar">
       <section id="intro">
-        <Link href="/" passHref>
-          <a className="logo">
-            <Image
-              src="/images/me.jpeg"
-              alt={'austin'}
-              width={500}
-              height={300}
-              layout="responsive"
-            />
-          </a>
+        <Link href="/" passHref className="logo">
+
+          <Image
+            src="/images/me.jpeg"
+            alt={'austin'}
+            width={500}
+            height={300}
+            layout="responsive"
+          />
+
         </Link>
         <header>
           <h2>Austin Dase</h2>
@@ -45,12 +45,12 @@ const SideBar = () => {
         <ul className="actions">
           <li>
             {currentPath !== '/resume' ? (
-              <Link href="/resume" passHref>
-                <a className="button">Learn More</a>
+              <Link href="/resume" passHref className="button">
+                Learn More
               </Link>
             ) : (
-              <Link href="/about" passHref>
-                <a className="button">About Me</a>
+              <Link href="/about" passHref className="button">
+                About Me
               </Link>
             )}
           </li>
@@ -62,7 +62,7 @@ const SideBar = () => {
         <p className="copyright">
           &copy; Austin&apos;Dase{' '}
           <Link href="/" passHref>
-            <a>dase.dev</a>
+            dase.dev
           </Link>
           .
         </p>

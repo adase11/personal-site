@@ -26,7 +26,7 @@ const About = () => {
           <div className="title">
             <h2>
               <Link href="/about" passHref>
-                <a>About Me</a>
+                About Me
               </Link>
             </h2>
             <p>(in about {count} words)</p>

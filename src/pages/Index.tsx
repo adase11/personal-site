@@ -13,7 +13,7 @@ const Index = () => (
         <div className="title">
           <h2>
             <Link href="/" passHref>
-              <a>About this site</a>
+              About this site
             </Link>
           </h2>
           <p>
@@ -25,23 +25,23 @@ const Index = () => (
       <p>
         Welcome to my website. Please feel free to read more{' '}
         <Link href="/about" passHref>
-          <a>about me</a>
+          about me
         </Link>
         , or you can check out my{' '}
         <Link href="/resume" passHref>
-          <a>resume</a>
+          resume
         </Link>
         ,{' '}
         <Link href="/projects" passHref>
-          <a>projects</a>
+          projects
         </Link>
         , view{' '}
         <Link href="/stats" passHref>
-          <a>site statistics</a>
+          site statistics
         </Link>
         , or{' '}
         <Link href="/contact" passHref>
-          <a>contact</a>
+          contact
         </Link>{' '}
         me.
       </p>

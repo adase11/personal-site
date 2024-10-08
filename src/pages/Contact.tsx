@@ -13,7 +13,7 @@ const Contact = () => (
         <div className="title">
           <h2>
             <Link href="/contact" passHref>
-              <a>Contact</a>
+              Contact
             </Link>
           </h2>
         </div>

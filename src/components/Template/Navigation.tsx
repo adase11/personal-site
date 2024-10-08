@@ -10,7 +10,7 @@ const Navigation = () => (
         .filter((l) => l.index)
         .map((l) => (
           <Link key={l.label} href={l.path} passHref>
-            <a>{l.label}</a>
+            {l.label}
           </Link>
         ))}
     </h1>
@@ -21,7 +21,7 @@ const Navigation = () => (
           .map((l) => (
             <li key={l.label}>
               <Link href={l.path} passHref>
-                <a>{l.label}</a>
+                {l.label}
               </Link>
             </li>
           ))}
