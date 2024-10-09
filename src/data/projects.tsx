@@ -8,9 +8,18 @@ export interface IProject {
   desc: string;
   link?: string;
   pdf?: string;
+  youtube?: string;
 }
 
 const data: IProject[] = [
+  {
+    title: 'Testcontainers Live',
+    subtitle: '',
+    desc: '',
+    image: '',
+    date: '2023-08-09',
+    youtube: 'T_DKV7XCNgk'
+  },
   {
     title: 'A System for Automated Facial Expression Recognition',
     subtitle: 'A system for automated facial expression recognition',

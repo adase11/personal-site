@@ -1,6 +1,7 @@
 import dayjs from 'dayjs';
-import Image from 'next/image';
 import React, { Suspense, lazy } from 'react';
+import LiteYouTubeEmbed from 'react-lite-youtube-embed';
+import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 import { IProject } from '../../data/projects';
 
 const PdfViewer = lazy(() => import('./PdfViewer'));
@@ -24,14 +25,11 @@ const Cell: React.FC<ICell> = ({ data }) => (
           <div></div>
         )}
       </header>
-      {data.image ? (
+      {data.youtube ? (
         <a href={data.link} className="image">
-          <Image
-            src={`/${data.image}`}
-            alt={data.title}
-            width={500}
-            height={300}
-            layout="responsive"
+          <LiteYouTubeEmbed
+            id={data.youtube}
+            title="What’s new in Material Design for the web (Chrome Dev Summit 2019)"
           />
         </a>
       ) : (
