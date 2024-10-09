@@ -63,7 +63,7 @@ const SideBar = () => {
       <section id="footer">
         <ContactIcons />
         <p className="copyright">
-          &copy; Austin&apos;Dase{' '}
+          &copy; Austin Dase{' '}
           <Link href="/" passHref>
             dase.dev
           </Link>

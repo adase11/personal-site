@@ -25,11 +25,20 @@ const Main: React.FC<MainProps> = ({
       defaultTitle="Austin Dase"
       defer={false}
     >
+      <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta
+        id="viewport"
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+      />
+
       <meta property="og:title" content="Austin Dase" />
       <meta
         property="og:description"
         content="Austin Dase's personal website."
       />
+
       <meta
         property="og:image"
         content="https://dase.dev/public/images/favicon/web-app-manifest-512x512.png"
