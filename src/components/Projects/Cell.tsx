@@ -27,7 +27,7 @@ const Cell: React.FC<ICell> = ({ data, id }) => {
   const isOpen = cells[id]?.isOpen || false; // Safely access isOpen
 
   function handleToggle() {
-    console.log(`Setting isOpen = ${!isOpen}`)
+    console.log(`Setting isOpen = ${!isOpen}`);
     setIsOpen(id, !isOpen); // Toggle open/close state
   }
 
@@ -39,35 +39,32 @@ const Cell: React.FC<ICell> = ({ data, id }) => {
           transitionTime={1}
           trigger={
             <header onClick={handleToggle} style={{ cursor: 'pointer' }}>
-            <div>
-              <h3
-                data-tooltip-id="custom-tooltip"
-                data-tooltip-content={isOpen ? 'collapse' : 'expand'}
-              >
-                <a href={data.link}>{data.title}</a>
-              </h3>
-              <Tooltip
-                id="custom-tooltip"
-                className="custom-tooltip"
-                place="top-start"
-              />
-            </div>
-            {data.date ? (
-              <time className="published">
-                {dayjs(data.date).format('MMMM, YYYY')}
-              </time>
-            ) : (
-              <div></div>
-            )}
-          </header>
+              <div>
+                <h3
+                  data-tooltip-id="custom-tooltip"
+                  data-tooltip-content={isOpen ? 'collapse' : 'expand'}
+                >
+                  <a href={data.link}>{data.title}</a>
+                </h3>
+                <Tooltip
+                  id="custom-tooltip"
+                  className="custom-tooltip"
+                  place="top-start"
+                />
+              </div>
+              {data.date ? (
+                <time className="published">
+                  {dayjs(data.date).format('MMMM, YYYY')}
+                </time>
+              ) : (
+                <div></div>
+              )}
+            </header>
           }
         >
           {data.youtube ? (
             <a href={data.link} className="image">
-              <LiteYouTubeEmbed
-                id={data.youtube}
-                title={data.title}
-              />
+              <LiteYouTubeEmbed id={data.youtube} title={data.title} />
             </a>
           ) : (
             <div></div>

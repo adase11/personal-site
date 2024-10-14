@@ -36,15 +36,15 @@ const useCellStore = create<CellStore>()(
           return {
             cells: {
               ...state.cells,
-              [id]: { isOpen }, // Safely update the isOpen state for this id
-            },
+              [id]: { isOpen } // Safely update the isOpen state for this id
+            }
           };
-        }),
+        })
     }),
     {
       name: 'cell-store',
       storage: zustandStorage,
-      skipHydration: true, // Skipping hydration is ok if your logic doesn't require it
+      skipHydration: true // Skipping hydration is ok if your logic doesn't require it
     }
   )
 );

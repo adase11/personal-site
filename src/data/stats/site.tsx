@@ -24,10 +24,6 @@ const initialData: IGitHubData[] = [
     link: 'https://github.com/adase11/personal-site/network'
   },
   {
-    label: 'Number of spoons',
-    value: '0'
-  },
-  {
     label: 'Number of linter warnings',
     value: '0' // enforced via github workflow
   },

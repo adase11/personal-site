@@ -29,13 +29,13 @@ const work: IWorkExperience[] = [
     url: 'https://fundrise.com',
     startDate: '2022-01-01',
     summary:
-      'I lead an engineering team at [Fundrise](https://fundrise.com/), overseeing the development and release of innovative new products. Our most recently released product is [Equitize](https://equitize.app). Blending technical expertise with strategic leadership, I ensure our projects align with overarching business goals while driving the development of high-quality, cutting-edge software. My role involves direct coding contributions, architectural decisions, and close collaboration with executive leadership to tailor technological solutions to business needs.',
+      'I lead an engineering team at [Fundrise](https://fundrise.com/) overseeing the development and release of innovative new products. Our most recently released product is [Equitize](https://equitize.app).',
     highlights: [
       'Lead a team of engineers with a focus on building AI enabled, modern web applications.',
+      'Develop software using technologies including Java, Spring Boot, PostgreSQL, TypeScript, Vue3, and a variety of AWS services.',
+      'Routinely engage with our product and executive teams on project requirements and deliverables.',
       'Managed the inception, development, and launch of Equitize, driving the product to process millions of dollars in transactions.',
-      'Leverage in an array of technologies including Java, Spring Boot, PostgreSQL, TypeScript, Vue3, and a variety of AWS services.',
-      'Pioneered the adoption of cutting-edge technologies and tools inclusing [Testcontainers](https://testcontainers.com/), [Retool](https://retool.com/), [Auth0](https://auth0.com/), Java 21, [JOOQ](https://www.jooq.org/), and [GraphQL](https://graphql.org/).',
-      'Routinely engage with our executive and product teams on project requirements and deliverables.'
+      'Pioneered the adoption of new tools and technologies inclusing [Testcontainers](https://testcontainers.com/), [Retool](https://retool.com/), [Auth0](https://auth0.com/), Java 21, [JOOQ](https://www.jooq.org/), and [GraphQL](https://graphql.org/).'
     ]
   },
   {
