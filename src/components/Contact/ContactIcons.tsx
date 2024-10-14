@@ -1,8 +1,8 @@
+import { config } from '@fortawesome/fontawesome-svg-core';
+import '@fortawesome/fontawesome-svg-core/styles.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import data from '../../data/contact';
-import { config } from '@fortawesome/fontawesome-svg-core'
-import '@fortawesome/fontawesome-svg-core/styles.css'
-config.autoAddCss = false
+config.autoAddCss = false;
 
 const ContactIcons = () => (
   <ul className="icons">

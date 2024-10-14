@@ -41,7 +41,8 @@ const SideBar = () => {
           and{' '}
           <a href="https://www.towson.edu/fcsm/departments/computerinfosci/grad/computersci/">
             Towson University
-          </a>. Before joining Fundrise, I started my career at{' '}
+          </a>
+          . Before joining Fundrise, I started my career at{' '}
           <a href="https://www.travelers.com">Travelers</a>.
         </p>
         <ul className="actions">

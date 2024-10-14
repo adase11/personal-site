@@ -39,7 +39,9 @@ const Job: React.FC<IJob> = ({
     {highlights ? (
       <ul className="points">
         {highlights.map((highlight) => (
-          <li key={highlight}>{highlight}</li>
+          <li key={highlight}>
+            <Markdown>{highlight}</Markdown>
+          </li>
         ))}
       </ul>
     ) : null}

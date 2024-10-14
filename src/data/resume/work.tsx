@@ -29,12 +29,13 @@ const work: IWorkExperience[] = [
     url: 'https://fundrise.com',
     startDate: '2022-01-01',
     summary:
-      'I lead a team responsible for developing new products and applications, including Equitize, which has facilitated millions of dollars in transactions, as well as a new AI/ML-focused project. I oversee the architecture, collaborate with executive teams, and contribute to back-end development.',
+      'I lead an engineering team at [Fundrise](https://fundrise.com/), overseeing the development and release of innovative new products. Our most recently released product is [Equitize](https://equitize.app). Blending technical expertise with strategic leadership, I ensure our projects align with overarching business goals while driving the development of high-quality, cutting-edge software. My role involves direct coding contributions, architectural decisions, and close collaboration with executive leadership to tailor technological solutions to business needs.',
     highlights: [
-      'Manage a team of engineers with a focus on building AI enabled, modern web applications.',
-      'Lead development of Equitize, facilitating millions of dollars in transactions.',
-      'Contribute to backend systems using Spring Boot, Java 21, Postgres, Vue3, and AWS infrastructure.',
-      'Coordinate with the our executive team on project requirements and deliverables.'
+      'Lead a team of engineers with a focus on building AI enabled, modern web applications.',
+      'Managed the inception, development, and launch of Equitize, driving the product to process millions of dollars in transactions.',
+      'Leverage in an array of technologies including Java, Spring Boot, PostgreSQL, TypeScript, Vue3, and a variety of AWS services.',
+      'Pioneered the adoption of cutting-edge technologies and tools inclusing [Testcontainers](https://testcontainers.com/), [Retool](https://retool.com/), [Auth0](https://auth0.com/), Java 21, [JOOQ](https://www.jooq.org/), and [GraphQL](https://graphql.org/).',
+      'Routinely engage with our executive and product teams on project requirements and deliverables.'
     ]
   },
   {
@@ -47,7 +48,7 @@ const work: IWorkExperience[] = [
       'As the senior engineer on our "Daily Processing" team, I developed software to process payments, handle KYC, and issue shares. I led several key initiatives, including rewriting ACH processing systems, implementing our transfer agent share reconciliation process, and integrating new payment methods.',
     highlights: [
       'Rewrote ACH processing software, handling over $1 billion in transactions in the first year.',
-      'Integrated Stripe for debit card funding, processing over 40,000 transactions in the first year.',
+      'Integrated [Stripe](https://stripe.com/) for debit card funding, processing over 40,000 transactions in the first year.',
       'Developed a new integration with our transfer agent, automating reconciliation of shareholdings.',
       'Created a test data framework used department-wide for local test data generation.'
     ]

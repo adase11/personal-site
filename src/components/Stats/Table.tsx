@@ -17,7 +17,13 @@ const Table = (data: ITable) => (
   <table>
     <tbody>
       {data.data.map((pair: ITableData) => (
-        <TableRow key={pair.key} {...pair} />
+        <TableRow
+          key={pair.key}
+          label={pair.label}
+          link={pair.label}
+          value={pair.value}
+          format={pair.format}
+        />
       ))}
     </tbody>
   </table>
