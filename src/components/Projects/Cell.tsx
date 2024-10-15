@@ -3,7 +3,7 @@ import React, { Suspense, lazy, useEffect } from 'react';
 import Collapsible from 'react-collapsible';
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
-import { Tooltip } from 'react-tooltip'; // Correct import
+import { Tooltip } from 'react-tooltip';
 import { IProject } from '../../data/projects';
 import useCellStore from '../../store/cell-store';
 
@@ -27,9 +27,11 @@ const Cell: React.FC<ICell> = ({ data, id }) => {
   const isOpen = cells[id]?.isOpen || false; // Safely access isOpen
 
   function handleToggle() {
-    console.log(`Setting isOpen = ${!isOpen}`);
     setIsOpen(id, !isOpen); // Toggle open/close state
   }
+
+  // Ensure this component behaves consistently on both client and server
+  const isClient = typeof window !== 'undefined';
 
   return (
     <div className="cell-container">
@@ -46,11 +48,13 @@ const Cell: React.FC<ICell> = ({ data, id }) => {
                 >
                   <a href={data.link}>{data.title}</a>
                 </h3>
-                <Tooltip
-                  id="custom-tooltip"
-                  className="custom-tooltip"
-                  place="top-start"
-                />
+                {isClient && (
+                  <Tooltip
+                    id="custom-tooltip"
+                    className="custom-tooltip"
+                    place="top-start"
+                  />
+                )}
               </div>
               {data.date ? (
                 <time className="published">
@@ -62,20 +66,22 @@ const Cell: React.FC<ICell> = ({ data, id }) => {
             </header>
           }
         >
-          {data.youtube ? (
+          {isClient && data.youtube ? (
             <a href={data.link} className="image">
               <LiteYouTubeEmbed id={data.youtube} title={data.title} />
             </a>
           ) : (
             <div></div>
           )}
-          {data.pdf ? (
+
+          {isClient && data.pdf ? (
             <Suspense fallback={<div>Loading PDF...</div>}>
-              {<PdfViewer data={{ path: data.pdf }} />}
+              <PdfViewer data={{ path: data.pdf }} />
             </Suspense>
           ) : (
             <div></div>
           )}
+
           <div className="description">
             <p>{data.desc}</p>
           </div>
