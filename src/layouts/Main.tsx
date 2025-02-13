@@ -57,10 +57,6 @@ const Main: React.FC<MainProps> = ({
       <link rel="canonical" href="/" />
 
       <link
-        href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Raleway:400,800,900"
-        rel="stylesheet"
-      />
-      <link
         rel="icon"
         type="image/png"
         href="/images/favicon/favicon-48x48.png"
