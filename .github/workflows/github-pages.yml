@@ -53,7 +53,6 @@ jobs:
 
       - name: Fix permissions
         run: |
-          ls -lR
           find . -type f -exec chmod -v -c +r {} + | while read line; do
             echo "::warning title=Invalid file permissions automatically fixed::$line"
           done
@@ -63,10 +62,10 @@ jobs:
 
       - name: Upload artifact
         id: upload
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
           path: "out"  # Ensure 'out' is the correct directory for your static files
-          name: github-pages-${{ github.sha }} # Artifact name
+  #          name: github-pages-${{ github.sha }} # Artifact name
   deploy:
     # Add a dependency to the build job
     needs: build
@@ -87,5 +86,5 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4 # or specific "vX.X.X" version tag for this action
-        with:
-          artifact_name: github-pages-${{ github.sha }}
+#        with:
+#          artifact_name: github-pages-${{ github.sha }}
