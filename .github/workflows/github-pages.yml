@@ -53,9 +53,12 @@ jobs:
 
       - name: Fix permissions
         run: |
-          ls -l
-          chmod -v -c -R +rX "out" | while read line; do
+          ls -lR
+          find . -type f -exec chmod -v -c +r {} + | while read line; do
             echo "::warning title=Invalid file permissions automatically fixed::$line"
+          done
+          find . -type d -exec chmod -v -c +rX {} + | while read line; do
+            echo "::warning title=Invalid directory permissions automatically fixed::$line"
           done
 
       - name: Upload artifact
