@@ -8,11 +8,7 @@ const validateText = (text: string) => {
   return re.test(text) || text.length === 0;
 };
 
-const messages = [
-  'hi',
-  'hello',
-  'hola'
-];
+const messages = ['hi', 'hello', 'hola'];
 
 const useInterval = (callback: () => void, delay: number | null) => {
   const savedCallback: React.MutableRefObject<() => void> = useRef<() => void>(
