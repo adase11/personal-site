@@ -29,7 +29,7 @@ const work: IWorkExperience[] = [
     url: 'https://fundrise.com',
     startDate: '2022-01-01',
     summary:
-      'I lead an engineering team at [Fundrise](https://fundrise.com/) overseeing the development and release of innovative new products. Our most recently released product is [Equitize](https://equitize.app).',
+      'I lead an engineering team at [Fundrise](https://fundrise.com/) overseeing the development and release of innovative new products. Our most recently released product is [RealAI](https://realai.com).',
     highlights: [
       'Lead a team of engineers with a focus on building AI enabled, modern web applications.',
       'Develop software using technologies including Java, Spring Boot, PostgreSQL, TypeScript, Vue3, and a variety of AWS services.',
