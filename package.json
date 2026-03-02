@@ -41,7 +41,7 @@
     "react-ga": "3.3.1",
     "react-helmet-async": "2.0.5",
     "react-lite-youtube-embed": "2.4.0",
-    "react-pdf": "9.1.1",
+    "react-pdf": "10.4.1",
     "react-tooltip": "5.28.0",
     "zustand": "5.0.0-rc.2"
   },
