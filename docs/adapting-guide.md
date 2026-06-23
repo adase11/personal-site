@@ -23,7 +23,7 @@ The following is taken directly from [https://mldangelo.github.io/personal-site/
 
 ### Adapt Content
 
-I recommend keeping the project running as you go (with `npm start`) to help correct mistakes quickly.
+I recommend keeping the project running as you go (with `pnpm start`) to help correct mistakes quickly.
 
 1. Start by changing text in the sidebar. This file is located at `src/components/Template/SideBar.js`.
 1. Add an image of yourself in `public/images/me.jpg`. Your image should be approximately 256 x 256 pixels. Larger and smaller is ok, but avoid very large images to save bandwidth. If you need help resizing your image, Adobe makes a great online tool [here](https://www.adobe.com/photoshop/online/resize-image.html).

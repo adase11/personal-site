@@ -35,14 +35,14 @@ const SideBar = () => {
       <section className="blurb">
         <h2>About</h2>
         <p>
-          Hi, I&apos;m Austin. I&apos;m a Software Engineer at{' '}
+          Hi, I&apos;m Austin. I&apos;m Director of Engineering at{' '}
           <a href="https://fundrise.com">Fundrise</a>, a graduate of{' '}
           <a href="https://www.rhsmith.umd.edu">The University of Maryland</a>{' '}
           and{' '}
           <a href="https://www.towson.edu/fcsm/departments/computerinfosci/grad/computersci/">
             Towson University
           </a>
-          . Before joining Fundrise, I started my career at{' '}
+          . Before Fundrise, I sharpened my skills at{' '}
           <a href="https://www.travelers.com">Travelers</a>.
         </p>
         <ul className="actions">

@@ -25,7 +25,7 @@ This projects attempts to follow these design principles. Feedback and discussio
 1. Lean
    - Projects bloat over time. Actively prune for old and dead code.
    - New features that affect the entire project should be carefully considered.
-   - Buy, don't build. Don't reinvent the wheel. Use popular npm libraries when possible.
+   - Buy, don't build. Don't reinvent the wheel. Use popular ecosystem libraries when possible.
 1. Limited horizontal fragmentation
    - Linter to prevent easy PR nits & to prevent developers from wasting time thinking about code style.
    - Preferred React Style - ie (functional components & proptypes).
@@ -36,7 +36,7 @@ This projects attempts to follow these design principles. Feedback and discussio
 
 1. Use _Boring_ technologies
    - Javascript over reason or typescript. Limited ecmascript experimental features.
-   - Prefer popular and well maintained npm packages.
+   - Prefer popular and well maintained package registry dependencies.
 1. Maintainable
    - Easy setup.
    - It should be easy to deploy any version of this site.

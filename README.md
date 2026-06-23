@@ -20,6 +20,7 @@ Your contributions are warmly welcomed! If you wish to contribute, please review
 ## 🔧 Dependencies
 
 Ensure you have [node](https://nodejs.org/) >= v20. Optionally, use [nvm](https://github.com/nvm-sh/nvm#installing-and-updating) to manage node versions.
+This project uses [pnpm](https://pnpm.io/) v10 as the package manager.
 
 ## 🚀 Setup and Running
 
@@ -40,13 +41,13 @@ Ensure you have [node](https://nodejs.org/) >= v20. Optionally, use [nvm](https:
 3. Install dependencies:
 
    ```bash
-   npm install
+   pnpm install
    ```
 
 4. Start the application:
 
    ```bash
-   npm start
+   pnpm start
    ```
 
 By default, the application should be available at [http://localhost:3000/](http://localhost:3000/).
@@ -69,7 +70,7 @@ For a static export without deploying to GitHub Pages:
 - Execute:
 
   ```bash
-  npm run predeploy
+   pnpm run predeploy
   ```
 
 This will generate a static version in `personal-site/build/` which you can host or deploy to a CDN.

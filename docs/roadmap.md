@@ -44,5 +44,5 @@ This site has been a work in progress since 2014. I have tried to make updates t
 
 - Use typescript everywhere instead of Vanilla JS/JSX - will this hinder new developer experience?
 - Add support for more exotic integrations (reason, webassembly).
-- hydrate all unique content on the site from one location -> deploy as npm package + json.
+- hydrate all unique content on the site from one location -> deploy as a package + json.
 - Use husky for git pre-commit hooks.
