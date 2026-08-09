@@ -1,7 +1,7 @@
 import { Download } from 'lucide-react';
 import type { Metadata } from 'next';
 import PageHeader from '@/components/ui/page-header';
-import { email, title as jobTitle, location, name } from '@/data/bio';
+import { email, title as jobTitle, location, name, degree } from '@/data/bio';
 import { pageMetadata } from '@/lib/metadata';
 import { RESUME_PDF_PATH, SITE_URL } from '@/lib/site';
 import Education from './education';
@@ -35,6 +35,7 @@ const Resume = () => (
     <div className="hidden print:block">
       <p className="text-[1.9rem] leading-tight font-serif text-fg">{name}</p>
       <p className="mt-1.5 font-mono text-[0.78rem] text-muted">{jobTitle}</p>
+      <p className="mt-1.5 font-mono text-[0.78rem] text-muted">{degree}</p>
       <p className="mt-1 font-mono text-[0.78rem] text-faint">
         {location} · {email} · {SITE_URL.replace('https://', '')}
       </p>

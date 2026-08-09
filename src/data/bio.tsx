@@ -1,8 +1,9 @@
 import type { ReactNode } from 'react';
 
 export const name = 'Austin Dase';
-export const email = 'hi@dase.dev';
+export const email = 'resume@dase.dev';
 export const title = 'Director of Engineering, Fundrise';
+export const degree = 'M.S. Computer Science, Towson University | B.S. Information Systems, University of Maryland';
 export const location = 'Washington, DC / Maryland';
 
 /**
@@ -49,18 +50,16 @@ export const bio: { id: string; body: ReactNode }[] = [
     id: 'work',
     body: (
       <>
-        I build software at the intersection of{' '}
-        <span className="mark">applied AI</span> and financial infrastructure.
-        I&apos;m Director of Engineering at{' '}
+        I build software at the intersection of applied AI and financial
+        infrastructure. I&apos;m Director of Engineering at{' '}
         <a href="https://fundrise.com" className="mark">
           Fundrise
         </a>
         , where I lead the engineering behind our AI-enabled products —
         including{' '}
         <a href="https://realai.com" className="mark">
-          RealAI
-        </a>{' '}
-        — and still write most of the code, designs, and reviews myself.
+          RealAI.
+        </a>
       </>
     )
   },
@@ -70,9 +69,9 @@ export const bio: { id: string; body: ReactNode }[] = [
       <>
         Most of my work has been zero-to-one: taking a concept through prototype
         to a production system people depend on. RealAI is the current one;
-        before it, Equitize, the private-securities platform Fundrise runs on.
-        Underneath both is a decade of payments, KYC, and settlement
-        infrastructure in a regulated domain, where being wrong is expensive.
+        before it, Equitize, a private-securities platform providing secondary
+        market liquidity. Underneath both is a decade of experience in payments,
+        KYC, and settlement infrastructure in highly regulated domains.
       </>
     )
   }

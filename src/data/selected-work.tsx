@@ -21,20 +21,19 @@ const selectedWork: ISelectedWork[] = [
     title: 'RealAI',
     href: 'https://realai.com',
     body:
-      "Fundrise's AI product, taken from early prototype through public " +
-      'launch and now being rebuilt onto Next.js, TypeScript, and Vercel ' +
-      'ahead of an expanded release. I own the architecture end to end: ' +
-      'model selection, prompt and context design, tool use, evaluation, and ' +
-      'the production system serving it.'
+      "Fundrise's flagship AI product, taken from early prototype through public " +
+      'launch and continued ongoing development; built on Next.js, TypeScript, and Vercel. ' +
+      'An agent harness with MCPs, prompt and context architecture, and a suite of tools for LLMs ' +
+      'to produce high-quality real estate analysis.'
   },
   {
     kind: 'Product · 0→1',
     title: 'Equitize',
     body:
-      'Fundrise’s private-securities platform, shipped from concept to ' +
+      'Fundrise’s private secondary market securities platform, shipped from concept to ' +
       'launch and scaled to millions in transaction volume. Concept, ' +
-      'prototype, architecture, and most of the implementation — then the ' +
-      'operational work of running it once real money moved through it.'
+      'prototype, architecture, and implementation — then operating the ' +
+      'platform.'
   },
   {
     kind: 'Infrastructure',
@@ -42,7 +41,7 @@ const selectedWork: ISelectedWork[] = [
     body:
       'The systems underneath the platform: an ACH processing architecture ' +
       'handling $1B+ in annual transaction volume, a Stripe debit funding ' +
-      'integration that processed 40k+ transactions in its first year, and ' +
+      'integration that processed 40k+ transactions in its first year, automated KYC for every user, and ' +
       'automated transfer-agent reconciliation replacing a manual process.'
   },
   {

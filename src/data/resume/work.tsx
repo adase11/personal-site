@@ -31,14 +31,12 @@ const work: IWorkExperience[] = [
     position: 'Director of Engineering',
     url: 'https://fundrise.com',
     startDate: '2026-01-01',
-    blurb:
-      "Leading RealAI's rebuild onto Next.js ahead of its next public " +
-      "release, alongside Fundrise's other AI-enabled products.",
+    blurb: "Leading RealAI's ongoing development.",
     summary:
       'Engineering direction for AI-enabled products at [Fundrise](https://fundrise.com/), including [RealAI](https://realai.com) — hands-on through design, implementation, and review.',
     highlights: [
-      "Leading RealAI's rebuild from Vue.js/Java onto Next.js, TypeScript, and Vercel ahead of an expanded public release.",
-      'Own the technical direction for our AI-enabled products: model selection, prompt and context architecture, tool use, and how we evaluate output quality before it reaches users.',
+      "Leading RealAI's latest set of features and capeabilities ahead of an expanded public release.",
+      'Own the technical direction for our AI-enabled products: model selection, prompt and context architecture, tool use, and overall harness design.',
       'Work directly with product and company leadership to take concepts from prototype to production systems.'
     ]
   },
@@ -54,7 +52,7 @@ const work: IWorkExperience[] = [
       "Led the engineering shipping new products, including [RealAI](https://realai.com), Fundrise's flagship AI product.",
     highlights: [
       'Architected and shipped [RealAI](https://realai.com) from conception to launch, establishing the technical roadmap and our LLM engineering practices.',
-      'Built AI-enabled web applications on TypeScript, React, Vue 3, Java, Spring Boot, PostgreSQL, and AWS.',
+      'Built AI-enabled web applications using both React and Vue, Java, as well as Next.js and Spring Boot, PostgreSQL, and AWS.',
       "Contributed `tool_choice` support and prompt cache management to [Spring AI](https://github.com/spring-projects/spring-ai)'s Anthropic integration, both merged into the framework.",
       'Shipped the Equitize product from conception to launch, scaling to millions in transaction volume.',
       'Adopted modern dev tooling ([Testcontainers](https://testcontainers.com/), [Retool](https://retool.com/), [Auth0](https://auth0.com/), Java 21, [JOOQ](https://www.jooq.org/), [GraphQL](https://graphql.org/)) to reduce development friction and improve team velocity.'
@@ -88,7 +86,7 @@ const work: IWorkExperience[] = [
       'Shipped the IRA and Short Term Notes products, and built the KYC ' +
       'and auto-invest systems behind them.',
     summary:
-      'Owned auto-invest scheduling and KYC system development, delivering core infrastructure for new product lines.',
+      'Responsible for auto-invest scheduling and KYC system development, delivering core infrastructure for new product lines.',
     highlights: [
       'Shipped IRA product from conception to production, establishing new asset class offering.',
       'Designed and shipped Short Term Notes backend processing system.',
