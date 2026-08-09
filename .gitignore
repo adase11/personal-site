@@ -58,3 +58,6 @@ next-env.d.ts
 
 # Vercel
 .vercel
+
+# Local working notes, never published
+*.private.md
