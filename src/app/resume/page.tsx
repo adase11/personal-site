@@ -1,22 +1,21 @@
 import { Download } from 'lucide-react';
 import type { Metadata } from 'next';
 import PageHeader from '@/components/ui/page-header';
-import { degree, email, title as jobTitle, location, name } from '@/data/bio';
-import { pageMetadata } from '@/lib/metadata';
+import {
+  degree,
+  title as jobTitle,
+  location,
+  name,
+  resumeEmail
+} from '@/data/bio';
+import { metadataFor, RESUME } from '@/data/routes';
 import { RESUME_PDF_PATH, SITE_URL } from '@/lib/site';
 import Education from './education';
 import Experience from './experience';
 import SelectedWork from './selected-work';
 import Skills from './skills';
 
-export const metadata: Metadata = pageMetadata({
-  title: 'Resume',
-  description:
-    'Resume of Austin Dase — Director of Engineering at Fundrise. Applied ' +
-    'AI and LLM product engineering, payments and settlement infrastructure, ' +
-    'Java and Spring Boot, TypeScript, React and Next.js.',
-  path: '/resume'
-});
+export const metadata: Metadata = metadataFor(RESUME);
 
 const SECTIONS = [
   { label: 'Selected work', href: '#selected-work' },
@@ -36,14 +35,16 @@ const Resume = () => (
       <p className="text-[1.9rem] leading-tight font-serif text-fg">{name}</p>
       <p className="mt-1.5 font-mono text-[0.78rem] text-muted">{jobTitle}</p>
       <p className="mt-1.5 font-mono text-[0.78rem] text-muted">{degree}</p>
+      {/* resumeEmail, not the site address: replies to a sent resume should
+          land in their own inbox. */}
       <p className="mt-1 font-mono text-[0.78rem] text-faint">
-        {location} · {email} · {SITE_URL.replace('https://', '')}
+        {location} · {resumeEmail} · {SITE_URL.replace('https://', '')}
       </p>
       <hr className="mt-4 border-rule" />
     </div>
 
     <div data-print-hide>
-      <PageHeader eyebrow="Resume" title="Resume">
+      <PageHeader eyebrow={RESUME.eyebrow} title={RESUME.heading}>
         <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
           <nav aria-label="Resume sections" className="flex flex-wrap gap-2">
             {SECTIONS.map((section) => (

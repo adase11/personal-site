@@ -7,12 +7,9 @@ import SelectedWorkList from '@/components/ui/selected-work';
 import { bio, discipline, earlier, email, meta, name } from '@/data/bio';
 import { headlineSkills } from '@/data/resume/skills';
 import work from '@/data/resume/work';
-import { pageMetadata } from '@/lib/metadata';
+import { HOME, metadataFor } from '@/data/routes';
 
-export const metadata: Metadata = pageMetadata({
-  path: '/',
-  socialTitle: 'Austin Dase — Applied AI & Fintech Engineering'
-});
+export const metadata: Metadata = metadataFor(HOME);
 
 /** Only the current arc belongs on the cover; the resume carries the rest. */
 const RECENT_COUNT = 4;

@@ -4,7 +4,12 @@ import { useState } from 'react';
 import { email } from '@/data/bio';
 import useInterval from '@/hooks/use-interval';
 
-const MESSAGES = ['hi', 'hello', 'hola'];
+// Split from the real address rather than restated: the domain used to be a
+// literal here, so changing `email` moved the href without moving what the
+// page rendered. The greetings that follow only work because the local part is
+// itself a greeting — if it stops being one, they should go.
+const [LOCAL_PART, DOMAIN] = email.split('@');
+const MESSAGES = [LOCAL_PART, 'hello', 'hola'];
 /** Ticks to hold a completed message before starting the next one. */
 const HOLD = 50;
 /** Tick length in ms. */
@@ -21,7 +26,7 @@ interface EmailLinkProps {
  *
  * The href is always the real address, never the partially-typed one: hover
  * pauses the animation before a mouse click lands, but a touch tap has no
- * hover to pause it, so a mid-word tap used to open `mailto:h@dase.dev`.
+ * hover to pause it, so a mid-word tap used to open a truncated address.
  */
 const EmailLink = ({ loop = true }: EmailLinkProps) => {
   const [idx, setIdx] = useState(0);
@@ -75,7 +80,7 @@ const EmailLink = ({ loop = true }: EmailLinkProps) => {
         aria-hidden="true"
         className="ml-px inline-block w-px self-stretch bg-accent"
       />
-      <span>@dase.dev</span>
+      <span>@{DOMAIN}</span>
     </a>
   );
 };

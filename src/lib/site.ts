@@ -1,3 +1,5 @@
+import { company, name, product, role } from '@/data/bio';
+
 /**
  * Site-level constants. The Metadata API in app/layout.tsx reads them, as do
  * the JSON-LD graph in app/person-schema.tsx, the sitemap, and robots.
@@ -5,7 +7,7 @@
 export const SITE_URL = 'https://dase.dev';
 
 /** The person. Used for og:site_name and as the `| Austin Dase` title suffix. */
-export const SITE_NAME = 'Austin Dase';
+export const SITE_NAME = name;
 
 /**
  * The homepage <title>. Kept under ~60 characters so search results don't
@@ -35,8 +37,12 @@ export const PROFILES = {
 /**
  * The one-line positioning. Leads with what the work actually is rather than
  * with a job title, which reads the same to a person and to a search engine.
+ *
+ * The role, employer, and product are interpolated from data/bio so a job
+ * change is one edit rather than a grep across every description on the site.
  */
 export const DEFAULT_DESCRIPTION =
-  'Austin Dase is a software engineer in Washington, DC building applied ' +
-  'AI and financial infrastructure — currently Director of Engineering at ' +
-  'Fundrise, where he leads and builds AI-enabled products including RealAI.';
+  `${name} is a software engineer in Washington, DC building applied ` +
+  `AI and financial infrastructure — currently ${role} at ` +
+  `${company.name}, where he leads and builds AI-enabled products including ` +
+  `${product.name}.`;

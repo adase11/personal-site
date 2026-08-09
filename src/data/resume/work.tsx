@@ -1,3 +1,5 @@
+import { LINKS } from '@/data/links';
+
 /**
  * @typedef {Object} Position
  * Conforms to https://jsonresume.org/schema/
@@ -29,13 +31,12 @@ const work: IWorkExperience[] = [
   {
     name: 'Fundrise',
     position: 'Director of Engineering',
-    url: 'https://fundrise.com',
+    url: LINKS.fundrise,
     startDate: '2026-01-01',
     blurb: "Leading RealAI's ongoing development.",
-    summary:
-      'Engineering direction for AI-enabled products at [Fundrise](https://fundrise.com/), including [RealAI](https://realai.com) — hands-on through design, implementation, and review.',
+    summary: `Engineering direction for AI-enabled products at [Fundrise](${LINKS.fundrise}), including [RealAI](${LINKS.realai}) — hands-on through design, implementation, and review.`,
     highlights: [
-      "Leading RealAI's latest set of features and capeabilities ahead of an expanded public release.",
+      "Leading RealAI's latest set of features and capabilities ahead of an expanded public release.",
       'Own the technical direction for our AI-enabled products: model selection, prompt and context architecture, tool use, and overall harness design.',
       'Work directly with product and company leadership to take concepts from prototype to production systems.'
     ]
@@ -43,17 +44,16 @@ const work: IWorkExperience[] = [
   {
     name: 'Fundrise',
     position: 'Lead Software Engineer & Engineering Manager',
-    url: 'https://fundrise.com',
+    url: LINKS.fundrise,
     startDate: '2022-01-01',
     endDate: '2025-12-31',
     blurb:
       'Took RealAI from early prototype through launch, and shipped Equitize.',
-    summary:
-      "Led the engineering shipping new products, including [RealAI](https://realai.com), Fundrise's flagship AI product.",
+    summary: `Led the engineering shipping new products, including [RealAI](${LINKS.realai}), Fundrise's flagship AI product.`,
     highlights: [
-      'Architected and shipped [RealAI](https://realai.com) from conception to launch, establishing the technical roadmap and our LLM engineering practices.',
+      `Architected and shipped [RealAI](${LINKS.realai}) from conception to launch, establishing the technical roadmap and our LLM engineering practices.`,
       'Built AI-enabled web applications using both React and Vue, Java, as well as Next.js and Spring Boot, PostgreSQL, and AWS.',
-      "Contributed `tool_choice` support and prompt cache management to [Spring AI](https://github.com/spring-projects/spring-ai)'s Anthropic integration, both merged into the framework.",
+      `Contributed \`tool_choice\` support and prompt cache management to [Spring AI](${LINKS.springAi})'s Anthropic integration, both merged into the framework.`,
       'Shipped the Equitize product from conception to launch, scaling to millions in transaction volume.',
       'Adopted modern dev tooling ([Testcontainers](https://testcontainers.com/), [Retool](https://retool.com/), [Auth0](https://auth0.com/), Java 21, [JOOQ](https://www.jooq.org/), [GraphQL](https://graphql.org/)) to reduce development friction and improve team velocity.'
     ]
@@ -61,7 +61,7 @@ const work: IWorkExperience[] = [
   {
     name: 'Fundrise',
     position: 'Senior Software Engineer',
-    url: 'https://fundrise.com',
+    url: LINKS.fundrise,
     startDate: '2021-01-01',
     endDate: '2022-01-01',
     blurb:
@@ -71,7 +71,7 @@ const work: IWorkExperience[] = [
       'Worked on Daily Processing infrastructure handling payments, KYC, and share issuance.',
     highlights: [
       'Architected new ACH processing system handling $1B+ in annual transaction volume.',
-      'Shipped [Stripe](https://stripe.com/) debit funding integration, processing 40k+ transactions in year one.',
+      `Shipped [Stripe](${LINKS.stripe}) debit funding integration, processing 40k+ transactions in year one.`,
       'Automated transfer agent reconciliation, eliminating manual shareholding processing and reconciliation errors.',
       'Built department-wide test data framework, enabling rapid local development iteration across engineering.'
     ]
@@ -79,7 +79,7 @@ const work: IWorkExperience[] = [
   {
     name: 'Fundrise',
     position: 'Software Engineer',
-    url: 'https://fundrise.com',
+    url: LINKS.fundrise,
     startDate: '2019-11-01',
     endDate: '2021-01-01',
     blurb:
@@ -96,7 +96,7 @@ const work: IWorkExperience[] = [
   {
     name: 'Travelers',
     position: 'Associate Software Developer',
-    url: 'https://www.travelers.com',
+    url: LINKS.travelers,
     startDate: '2019-04-01',
     endDate: '2019-11-01',
     summary:
@@ -108,7 +108,7 @@ const work: IWorkExperience[] = [
   {
     name: 'Travelers',
     position: 'Senior Software Programmer',
-    url: 'https://www.travelers.com',
+    url: LINKS.travelers,
     startDate: '2017-04-01',
     endDate: '2019-04-01',
     summary:
@@ -120,7 +120,7 @@ const work: IWorkExperience[] = [
   {
     name: 'Travelers',
     position: 'Software Programmer',
-    url: 'https://www.travelers.com',
+    url: LINKS.travelers,
     startDate: '2016-03-01',
     endDate: '2017-04-01',
     summary: 'Developed proprietary software and internal systems.',

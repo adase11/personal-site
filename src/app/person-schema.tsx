@@ -1,3 +1,4 @@
+import { company, role } from '@/data/bio';
 import degrees from '@/data/resume/degrees';
 import { DEFAULT_DESCRIPTION, PROFILES, SITE_NAME, SITE_URL } from '@/lib/site';
 
@@ -50,11 +51,11 @@ const schema = {
       url: SITE_URL,
       image: `${SITE_URL}/images/me.jpeg`,
       description: DEFAULT_DESCRIPTION,
-      jobTitle: 'Director of Engineering',
+      jobTitle: role,
       worksFor: {
         '@type': 'Organization',
-        name: 'Fundrise',
-        url: 'https://fundrise.com'
+        name: company.name,
+        url: company.url
       },
       address: {
         '@type': 'PostalAddress',

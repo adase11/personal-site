@@ -1,15 +1,10 @@
+import { ABOUT } from '@/data/routes';
 import { OG_CONTENT_TYPE, OG_SIZE, ogCard } from '@/lib/og';
 
-export const alt = 'About Austin Dase';
+export const alt = ABOUT.card.alt;
 export const size = OG_SIZE;
 export const contentType = OG_CONTENT_TYPE;
 
-const Image = () =>
-  ogCard({
-    eyebrow: 'About',
-    title: 'Austin Dase',
-    subtitle:
-      'Zero-to-one product engineering at the intersection of applied AI and regulated finance.'
-  });
+const Image = () => ogCard(ABOUT.card);
 
 export default Image;

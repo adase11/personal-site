@@ -1,24 +1,15 @@
 import type { Metadata } from 'next';
 import PageHeader from '@/components/ui/page-header';
 import data from '@/data/projects';
-import { pageMetadata } from '@/lib/metadata';
+import { metadataFor, PROJECTS } from '@/data/routes';
 import ProjectCell from './project-cell';
 
-export const metadata: Metadata = pageMetadata({
-  title: 'Projects',
-  description:
-    'Open-source contributions by Austin Dase, including merged work on ' +
-    "Spring AI's Anthropic integration, plus talks and graduate research.",
-  path: '/projects'
-});
+export const metadata: Metadata = metadataFor(PROJECTS);
 
 const Projects = () => (
   <>
-    <PageHeader eyebrow="Projects" title="Projects">
-      <p>
-        Open-source contributions, talks, and research. Expand any entry for
-        detail.
-      </p>
+    <PageHeader eyebrow={PROJECTS.eyebrow} title={PROJECTS.heading}>
+      <p>{PROJECTS.lede}</p>
     </PageHeader>
 
     <div className="border-t border-rule">

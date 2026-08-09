@@ -1,15 +1,10 @@
+import { RESUME } from '@/data/routes';
 import { OG_CONTENT_TYPE, OG_SIZE, ogCard } from '@/lib/og';
 
-export const alt = 'Resume — Austin Dase';
+export const alt = RESUME.card.alt;
 export const size = OG_SIZE;
 export const contentType = OG_CONTENT_TYPE;
 
-const Image = () =>
-  ogCard({
-    eyebrow: 'Resume',
-    title: 'Austin Dase',
-    subtitle:
-      'Ten years building applied AI, payments, and settlement systems — Fundrise, Travelers.'
-  });
+const Image = () => ogCard(RESUME.card);
 
 export default Image;
