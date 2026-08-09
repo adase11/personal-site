@@ -1,9 +1,15 @@
 'use client';
 
 import { useState } from 'react';
+import { email } from '@/data/bio';
 import useInterval from '@/hooks/use-interval';
 
-const MESSAGES = ['hi', 'hello', 'hola'];
+// Split from the real address rather than restated: the domain used to be a
+// literal here, so changing `email` moved the href without moving what the
+// page rendered. The greetings that follow only work because the local part is
+// itself a greeting — if it stops being one, they should go.
+const [LOCAL_PART, DOMAIN] = email.split('@');
+const MESSAGES = [LOCAL_PART, 'hello', 'hola'];
 /** Ticks to hold a completed message before starting the next one. */
 const HOLD = 50;
 /** Tick length in ms. */
@@ -17,6 +23,10 @@ interface EmailLinkProps {
 /**
  * Types the local part of the address one character at a time. Pauses on hover
  * and focus so the address can actually be read or clicked.
+ *
+ * The href is always the real address, never the partially-typed one: hover
+ * pauses the animation before a mouse click lands, but a touch tap has no
+ * hover to pause it, so a mid-word tap used to open a truncated address.
  */
 const EmailLink = ({ loop = true }: EmailLinkProps) => {
   const [idx, setIdx] = useState(0);
@@ -57,7 +67,8 @@ const EmailLink = ({ loop = true }: EmailLinkProps) => {
 
   return (
     <a
-      href={`mailto:${message}@dase.dev`}
+      href={`mailto:${email}`}
+      aria-label={`Email ${email}`}
       onMouseEnter={() => setIsActive(false)}
       onMouseLeave={resume}
       onFocus={() => setIsActive(false)}
@@ -69,7 +80,7 @@ const EmailLink = ({ loop = true }: EmailLinkProps) => {
         aria-hidden="true"
         className="ml-px inline-block w-px self-stretch bg-accent"
       />
-      <span>@dase.dev</span>
+      <span>@{DOMAIN}</span>
     </a>
   );
 };

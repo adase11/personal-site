@@ -2,8 +2,18 @@ export interface WebLink {
   urlString: string;
 }
 
+/**
+ * Three name granularities, because three places need different ones and the
+ * compact ones are not derivable from the formal one. `shortName` is what you
+ * would say out loud; the homepage meta row is a single line and only fits at
+ * that length.
+ */
 export interface University extends WebLink {
+  /** Conversational. "Towson", "Maryland". */
+  shortName: string;
+  /** Ordinary use. "Towson University", "University of Maryland". */
   name: string;
+  /** Formal, for records. "University of Maryland, College Park". */
   detailedName: string;
   school: School;
 }
@@ -23,6 +33,7 @@ const smithInfoSystems =
   'https://www.rhsmith.umd.edu/programs/undergraduate/academics/academic-majors#information-systems';
 
 export const UniversityOfMaryland: University = {
+  shortName: 'Maryland',
   name: 'University of Maryland',
   detailedName: 'University of Maryland, College Park',
   urlString: umd,
@@ -42,6 +53,7 @@ const towsonCompSci =
   'https://www.towson.edu/fcsm/departments/computerinfosci/';
 
 export const TowsonUniversity: University = {
+  shortName: 'Towson',
   name: 'Towson University',
   detailedName: 'Towson University',
   urlString: towson,

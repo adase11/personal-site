@@ -16,6 +16,7 @@
     "dev": "next dev --webpack",
     "build": "next build --webpack",
     "start": "next start",
+    "resume:pdf": "node scripts/build-resume-pdf.mjs",
     "lint": "biome check --write",
     "lint:ci": "biome ci",
     "typecheck": "tsc --noEmit"
@@ -45,5 +46,8 @@
   },
   "browserslist": [
     "> 0.01%"
-  ]
+  ],
+  "volta": {
+    "node": "24.17.0"
+  }
 }

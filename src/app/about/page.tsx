@@ -1,53 +1,36 @@
-import fs from 'node:fs/promises';
-import path from 'node:path';
-import Markdown from 'markdown-to-jsx';
 import type { Metadata } from 'next';
 import ProfileCard from '@/components/layout/profile-card';
 import PageHeader from '@/components/ui/page-header';
-import { pageMetadata } from '@/lib/metadata';
+import { narrative } from '@/data/bio';
+import { ABOUT, metadataFor } from '@/data/routes';
+import { wordCount } from '@/lib/text';
 
-export const metadata: Metadata = pageMetadata({
-  title: 'About',
-  description: 'Learn about Austin Dase',
-  path: '/about',
-  imageAlt: 'Portrait of Austin Dase'
-});
+export const metadata: Metadata = metadataFor(ABOUT);
 
-// Read during the build so the copy is in the static HTML: no empty flash on
-// load, and crawlers see it. A Server Component can do this directly — the
-// getStaticProps round-trip this replaced is gone.
-const readAbout = async () => {
-  const markdown = await fs.readFile(
-    path.join(process.cwd(), 'public/data/about.md'),
-    'utf8'
-  );
+// The long form of the same narrative the homepage opens with — see the note
+// in data/bio. Counted at module scope because it is static: the copy is in
+// the build output, so there is no empty flash on load and crawlers see it.
+const words = narrative.reduce(
+  (total, paragraph) => total + wordCount(paragraph.body),
+  0
+);
 
-  const wordCount = markdown
-    .split(/\s+/)
-    .map((s) => s.replace(/\W/g, ''))
-    .filter((s) => s.length).length;
+const About = () => (
+  <>
+    <PageHeader eyebrow={ABOUT.eyebrow} title={ABOUT.heading}>
+      <p className="label text-faint">in about {words} words</p>
+    </PageHeader>
 
-  return { markdown, wordCount };
-};
+    <div className="prose max-w-none border-t border-rule">
+      {narrative.map((paragraph) => (
+        <p key={paragraph.id}>{paragraph.body}</p>
+      ))}
+    </div>
 
-const About = async () => {
-  const { markdown, wordCount } = await readAbout();
-
-  return (
-    <>
-      <PageHeader title="About me">
-        <p className="label text-faint">in about {wordCount} words</p>
-      </PageHeader>
-
-      <div className="prose max-w-none border-t border-rule">
-        <Markdown>{markdown}</Markdown>
-      </div>
-
-      <div className="mt-14">
-        <ProfileCard />
-      </div>
-    </>
-  );
-};
+    <div className="mt-14">
+      <ProfileCard />
+    </div>
+  </>
+);
 
 export default About;

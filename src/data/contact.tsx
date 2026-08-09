@@ -1,6 +1,8 @@
 import { Mail } from 'lucide-react';
 import type { ComponentType, SVGProps } from 'react';
 import { GithubIcon, LinkedinIcon, XIcon } from '@/components/ui/icons';
+import { email } from '@/data/bio';
+import { PROFILES } from '@/lib/site';
 
 export interface ContactLink {
   link: string;
@@ -8,24 +10,25 @@ export interface ContactLink {
   icon: ComponentType<SVGProps<SVGSVGElement> & { size?: number }>;
 }
 
+/** Profile URLs come from lib/site so the JSON-LD `sameAs` cannot drift. */
 const data: ContactLink[] = [
   {
-    link: 'https://github.com/adase11',
-    label: 'Github',
+    link: PROFILES.github,
+    label: 'GitHub',
     icon: GithubIcon
   },
   {
-    link: 'https://www.linkedin.com/in/austin-dase-40188b63/',
+    link: PROFILES.linkedin,
     label: 'LinkedIn',
     icon: LinkedinIcon
   },
   {
-    link: 'https://x.com/adase01',
-    label: 'Twitter',
+    link: PROFILES.x,
+    label: 'X',
     icon: XIcon
   },
   {
-    link: 'mailto:hi@dase.dev',
+    link: `mailto:${email}`,
     label: 'Email',
     icon: Mail
   }

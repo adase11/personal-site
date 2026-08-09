@@ -3,21 +3,13 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Entry from '@/components/ui/entry';
 import Section from '@/components/ui/section';
-import { bio, earlier, email, meta, name, role } from '@/data/bio';
+import SelectedWorkList from '@/components/ui/selected-work';
+import { bio, discipline, earlier, email, meta, name } from '@/data/bio';
 import { headlineSkills } from '@/data/resume/skills';
 import work from '@/data/resume/work';
-import { pageMetadata } from '@/lib/metadata';
+import { HOME, metadataFor } from '@/data/routes';
 
-const DESCRIPTION =
-  "Austin Dase's personal website. DC based software engineer, " +
-  'Director of Engineering at Fundrise.';
-
-export const metadata: Metadata = pageMetadata({
-  description: DESCRIPTION,
-  path: '/',
-  socialTitle: 'Austin Dase | Director of Engineering',
-  imageAlt: 'Portrait of Austin Dase'
-});
+export const metadata: Metadata = metadataFor(HOME);
 
 /** Only the current arc belongs on the cover; the resume carries the rest. */
 const RECENT_COUNT = 4;
@@ -32,7 +24,7 @@ const period = (startDate: string, endDate?: string) => {
 const Home = () => (
   <>
     <div className="pt-14 pb-12">
-      <p className="font-mono text-[0.82rem] text-faint">{role}</p>
+      <p className="font-mono text-[0.82rem] text-faint">{discipline}</p>
 
       <h1 className="mt-5 text-hero leading-[1.05] font-serif">{name}</h1>
 
@@ -59,6 +51,13 @@ const Home = () => (
         </a>
       </div>
     </div>
+
+    {/* Ahead of the role list on purpose: what was built reads better than
+        what the titles were, and it is the same order a reader who knows
+        nothing about me would want. */}
+    <Section title="Selected work">
+      <SelectedWorkList />
+    </Section>
 
     <Section title="Recently">
       {work.slice(0, RECENT_COUNT).map((job) => (

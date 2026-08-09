@@ -1,85 +1,76 @@
-# Personal Website
+# dase.dev
 
-Welcome to my [personal website](https://dase.dev)! This is an [MIT licensed](https://github.com/adase11/personal-site/blob/main/LICENSE) React-based Jamstack application. It offers a simple interface, easy modifications, static export capabilities, and free automatic deployments via [GitHub Pages](https://pages.github.com/).
+My personal site — [dase.dev](https://dase.dev).
 
-## 🚀 Features
+A [Next.js](https://nextjs.org) App Router application written in TypeScript, styled with
+[Tailwind v4](https://tailwindcss.com) configured entirely in CSS, and deployed on
+[Vercel](https://vercel.com).
 
-- Built with modern JavaScript and TypeScript, using tools and frameworks like [create-react-app](https://github.com/facebook/create-react-app), [React-Router](https://reactrouter.com/), and SCSS.
-- Automated workflows via [GitHub Actions](https://github.com/features/actions).
-- And more!
+It started as a fork of Michael D'Angelo's [personal-site](https://github.com/mldangelo/personal-site),
+which I'm grateful for. Very little of that codebase survives: the styling, the component layer,
+the content model, and the routing have all since been rewritten.
 
-## 🛠 Adapting this Project
+## Stack
 
-I forked this project from Michael D'Angelo's original [project](https://github.com/mldangelo/personal-site). If you'd like to create your own personal website based on this project, it shouldn't
-be too different from the instructions on Michael's page. Or you can clone/fork his directly.
+| | |
+| --- | --- |
+| Framework | Next.js 16, App Router, React 19 Server Components |
+| Language | TypeScript 7 |
+| Styling | Tailwind CSS v4 — no config file, no SCSS |
+| Fonts | Geist, Geist Mono, Newsreader via `next/font` |
+| Icons | `lucide-react`, `@icons-pack/react-simple-icons` |
+| Client state | Zustand, persisted to `localStorage` |
+| Tooling | Biome (lint + format + import sorting) |
+| Hosting | Vercel |
 
-## 🤝 Contributing
+There is no test suite.
 
-Your contributions are warmly welcomed! If you wish to contribute, please review the [design goals](./docs/design-goals.md), [roadmap](./docs/roadmap.md), and [contributing guidelines](./docs/contributing.md). For any bugs or suggestions, you can submit a pull request, or open an issue.
+## Running it
 
-## 🔧 Dependencies
+Node is pinned to the version in `.nvmrc`; pnpm is pinned via `packageManager` in `package.json`.
 
-Ensure you have [node](https://nodejs.org/) >= v20. Optionally, use [nvm](https://github.com/nvm-sh/nvm#installing-and-updating) to manage node versions.
-This project uses [pnpm](https://pnpm.io/) v10 as the package manager.
+```bash
+nvm use && pnpm install && pnpm dev
+```
 
-## 🚀 Setup and Running
+| Script | What it does |
+| --- | --- |
+| `pnpm dev` | Dev server on http://localhost:3000 |
+| `pnpm build` | Production build |
+| `pnpm start` | Serve the production build |
+| `pnpm lint` | Biome check, with fixes applied |
+| `pnpm lint:ci` | Biome in CI mode, no writes |
+| `pnpm typecheck` | `tsc --noEmit` |
+| `pnpm resume:pdf` | Re-render `/resume` to `public/austin-dase-resume.pdf` |
 
-1. Clone the repository:
+## How it's organized
 
-   ```bash
-   git clone git://github.com/adase11/personal-site.git
-   cd personal-site
-   ```
+Content is data, not markup. Pages read from typed modules under `src/data/` — `bio.tsx`,
+`selected-work.tsx`, `projects.tsx`, `resume/`. To change what the site says, edit the data
+module, not the component.
 
-2. (Optional) Ensure you're on Node v20 or higher:
+```
+src/
+  app/          routes, plus opengraph-image / sitemap / robots / manifest
+  components/   ui/ primitives, layout/ chrome
+  data/         all site content
+  lib/          metadata helpers, OG card builder, site constants
+  styles/       theme.css — the whole design system
+```
 
-   ```bash
-   nvm install
-   node --version
-   ```
+`src/styles/theme.css` is the single source of truth for the design: palette tokens that flip on
+`[data-theme='dark']`, three type roles (serif for display, sans for prose, mono for metadata),
+hairline rules instead of cards, and the print stylesheet the resume PDF is rendered from.
 
-3. Install dependencies:
+### Regenerating the resume PDF
 
-   ```bash
-   pnpm install
-   ```
+The PDF is printed from the live `/resume` page, so the download and the page cannot disagree.
+It is committed to `public/`, so this is a manual step after the resume content changes:
 
-4. Start the application:
+```bash
+pnpm build && pnpm resume:pdf
+```
 
-   ```bash
-   pnpm start
-   ```
+## License
 
-By default, the application should be available at [http://localhost:3000/](http://localhost:3000/).
-
-## 🚢 Deploying
-
-### Deploying to GitHub Pages
-
-1. Update the environment variables and Git remote URL in [`.github/workflows/github-pages.yml`](.github/workflows/github-pages.yml).
-2. Adjust the `homepage` value in `package.json` based on your hosting preferences.
-3. Planning on using a custom domain? Update `public/CNAME`. Otherwise, remove it.
-
-After making a commit to `main`, simply push your changes, and the deployment will be handled automatically.
-
-### Static Export
-
-For a static export without deploying to GitHub Pages:
-
-- Remove or disable `.github/workflows/github-pages.yml`.
-- Execute:
-
-  ```bash
-   pnpm run predeploy
-  ```
-
-This will generate a static version in `personal-site/build/` which you can host or deploy to a CDN.
-
-## 🙌 Acknowledgements
-
-- Michael D'Angelo's [personal site](https://github.com/mldangelo/personal-site) is the basis for this project.
-
-### From Michael's Acknowledgements
-- Initial template from [Future Imperfect](https://html5up.net/future-imperfect) by [@ajlkn](https://github.com/ajlkn) for [HTML5 UP](html5up.net).
-- Special thanks to [@typpo](https://github.com/typpo) for tirelessly answering all of my node.js and react questions.
-- Kudos to [@notrueblood](https://github.com/notrueblood)[<sup>[1]</sup>](https://github.com/adase11/personal-site/pull/218) and [@sjhsieh](https://github.com/sjhsieh)[<sup>[2]</sup>](https://github.com/adase11/personal-site/issues/168) for their constructive feedback.
+[MIT](./LICENSE).

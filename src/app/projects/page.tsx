@@ -1,20 +1,15 @@
 import type { Metadata } from 'next';
 import PageHeader from '@/components/ui/page-header';
 import data from '@/data/projects';
-import { pageMetadata } from '@/lib/metadata';
+import { metadataFor, PROJECTS } from '@/data/routes';
 import ProjectCell from './project-cell';
 
-export const metadata: Metadata = pageMetadata({
-  title: 'Projects',
-  description: "Learn about Austin Dase's projects.",
-  path: '/projects',
-  imageAlt: 'Preview card for Austin Dase projects and papers'
-});
+export const metadata: Metadata = metadataFor(PROJECTS);
 
 const Projects = () => (
   <>
-    <PageHeader eyebrow="Projects" title="Projects">
-      <p>Talks and papers. Expand any card to read or watch it inline.</p>
+    <PageHeader eyebrow={PROJECTS.eyebrow} title={PROJECTS.heading}>
+      <p>{PROJECTS.lede}</p>
     </PageHeader>
 
     <div className="border-t border-rule">

@@ -16,7 +16,7 @@ interface SectionProps {
 const Section = ({ title, aside, id, children }: SectionProps) => (
   <section id={id} className="border-t border-rule py-13">
     {(title || aside) && (
-      <div className="mb-8 flex items-baseline justify-between gap-4">
+      <div className="mb-8 flex items-baseline justify-between gap-4 print:mb-3">
         {title && <h2 className="text-section font-serif text-fg">{title}</h2>}
         {aside}
       </div>
