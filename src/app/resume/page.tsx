@@ -1,7 +1,7 @@
 import { Download } from 'lucide-react';
 import type { Metadata } from 'next';
 import PageHeader from '@/components/ui/page-header';
-import { email, title as jobTitle, location, name, degree } from '@/data/bio';
+import { degree, email, title as jobTitle, location, name } from '@/data/bio';
 import { pageMetadata } from '@/lib/metadata';
 import { RESUME_PDF_PATH, SITE_URL } from '@/lib/site';
 import Education from './education';

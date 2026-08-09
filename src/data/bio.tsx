@@ -3,7 +3,8 @@ import type { ReactNode } from 'react';
 export const name = 'Austin Dase';
 export const email = 'resume@dase.dev';
 export const title = 'Director of Engineering, Fundrise';
-export const degree = 'M.S. Computer Science, Towson University | B.S. Information Systems, University of Maryland';
+export const degree =
+  'M.S. Computer Science, Towson University | B.S. Information Systems, University of Maryland';
 export const location = 'Washington, DC / Maryland';
 
 /**
