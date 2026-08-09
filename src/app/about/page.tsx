@@ -8,9 +8,11 @@ import { pageMetadata } from '@/lib/metadata';
 
 export const metadata: Metadata = pageMetadata({
   title: 'About',
-  description: 'Learn about Austin Dase',
-  path: '/about',
-  imageAlt: 'Portrait of Austin Dase'
+  description:
+    'Austin Dase builds applied AI and financial infrastructure in ' +
+    'Washington, DC — currently Director of Engineering at Fundrise, where ' +
+    'he leads and builds RealAI.',
+  path: '/about'
 });
 
 // Read during the build so the copy is in the static HTML: no empty flash on

@@ -6,15 +6,19 @@ import ProjectCell from './project-cell';
 
 export const metadata: Metadata = pageMetadata({
   title: 'Projects',
-  description: "Learn about Austin Dase's projects.",
-  path: '/projects',
-  imageAlt: 'Preview card for Austin Dase projects and papers'
+  description:
+    'Open-source contributions by Austin Dase, including merged work on ' +
+    "Spring AI's Anthropic integration, plus talks and graduate research.",
+  path: '/projects'
 });
 
 const Projects = () => (
   <>
     <PageHeader eyebrow="Projects" title="Projects">
-      <p>Talks and papers. Expand any card to read or watch it inline.</p>
+      <p>
+        Open-source contributions, talks, and research. Expand any entry for
+        detail.
+      </p>
     </PageHeader>
 
     <div className="border-t border-rule">

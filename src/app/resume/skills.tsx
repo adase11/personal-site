@@ -1,17 +1,28 @@
 import Section from '@/components/ui/section';
-import { categories, skills } from '@/data/resume/skills';
-import SkillFilter from './skill-filter';
+import skillGroups from '@/data/resume/skills';
 
 /**
- * Server Component: the section chrome and copy are static, so only the filter
- * and the grid it drives cross into the client bundle.
+ * Server Component. The rated version needed a client filter to be navigable;
+ * the grouping does that work statically, so nothing here crosses into the
+ * client bundle.
  */
 const Skills = () => (
   <Section id="skills" title="Skills">
-    <p className="mb-6 max-w-2xl text-[0.92rem] leading-relaxed text-muted">
-      Some of my primary professional skills. Filter by category.
-    </p>
-    <SkillFilter skills={skills} categories={categories} />
+    <dl className="flex flex-col gap-7 print:gap-2.5">
+      {skillGroups.map((group) => (
+        <div
+          key={group.name}
+          className="grid grid-cols-1 gap-2 sm:grid-cols-[104px_1fr] sm:gap-6"
+        >
+          <dt className="label pt-[3px] text-faint">{group.name}</dt>
+          <dd className="sep-slash font-mono text-[0.85rem] text-muted">
+            {group.items.map((item) => (
+              <span key={item}>{item}</span>
+            ))}
+          </dd>
+        </div>
+      ))}
+    </dl>
   </Section>
 );
 

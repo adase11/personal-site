@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { email } from '@/data/bio';
 import useInterval from '@/hooks/use-interval';
 
 const MESSAGES = ['hi', 'hello', 'hola'];
@@ -17,6 +18,10 @@ interface EmailLinkProps {
 /**
  * Types the local part of the address one character at a time. Pauses on hover
  * and focus so the address can actually be read or clicked.
+ *
+ * The href is always the real address, never the partially-typed one: hover
+ * pauses the animation before a mouse click lands, but a touch tap has no
+ * hover to pause it, so a mid-word tap used to open `mailto:h@dase.dev`.
  */
 const EmailLink = ({ loop = true }: EmailLinkProps) => {
   const [idx, setIdx] = useState(0);
@@ -57,7 +62,8 @@ const EmailLink = ({ loop = true }: EmailLinkProps) => {
 
   return (
     <a
-      href={`mailto:${message}@dase.dev`}
+      href={`mailto:${email}`}
+      aria-label={`Email ${email}`}
       onMouseEnter={() => setIsActive(false)}
       onMouseLeave={resume}
       onFocus={() => setIsActive(false)}

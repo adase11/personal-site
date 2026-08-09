@@ -6,9 +6,10 @@ import EmailLink from './email-link';
 
 export const metadata: Metadata = pageMetadata({
   title: 'Contact',
-  description: 'Contact Austin Dase via email @ hi@dase.dev',
-  path: '/contact',
-  imageAlt: 'Austin Dase contact details and social links'
+  description:
+    'Get in touch with Austin Dase — email hi@dase.dev, or find him on ' +
+    'GitHub, LinkedIn, and X.',
+  path: '/contact'
 });
 
 const Contact = () => (

@@ -2,8 +2,15 @@ import type { ReactNode } from 'react';
 
 export const name = 'Austin Dase';
 export const email = 'hi@dase.dev';
-export const role = 'Director of Engineering, Fundrise';
+export const title = 'Director of Engineering, Fundrise';
 export const location = 'Washington, DC / Maryland';
+
+/**
+ * The eyebrow above the name. Describes the work rather than the job title —
+ * the title is a fact about one employer's ladder, the work is what transfers.
+ * The title still appears, in the bio and on the resume.
+ */
+export const discipline = 'Applied AI · Financial infrastructure';
 
 /** First professional software role — the meta row counts forward from here. */
 const CAREER_START = 2016;
@@ -42,17 +49,18 @@ export const bio: { id: string; body: ReactNode }[] = [
     id: 'work',
     body: (
       <>
-        I&apos;m a software engineer working at the intersection of fintech and
-        applied AI. At{' '}
+        I build software at the intersection of{' '}
+        <span className="mark">applied AI</span> and financial infrastructure.
+        I&apos;m Director of Engineering at{' '}
         <a href="https://fundrise.com" className="mark">
           Fundrise
         </a>
-        , I lead the engineering behind AI-enabled products including{' '}
+        , where I lead the engineering behind our AI-enabled products —
+        including{' '}
         <a href="https://realai.com" className="mark">
           RealAI
-        </a>
-        , alongside a background in the payments and compliance systems the
-        Fundrise platform runs on.
+        </a>{' '}
+        — and still write most of the code, designs, and reviews myself.
       </>
     )
   },
@@ -60,12 +68,11 @@ export const bio: { id: string; body: ReactNode }[] = [
     id: 'approach',
     body: (
       <>
-        Before Fundrise, I worked on proprietary software and machine learning
-        pipelines at{' '}
-        <a href="https://www.travelers.com" className="mark">
-          Travelers
-        </a>
-        .
+        Most of my work has been zero-to-one: taking a concept through prototype
+        to a production system people depend on. RealAI is the current one;
+        before it, Equitize, the private-securities platform Fundrise runs on.
+        Underneath both is a decade of payments, KYC, and settlement
+        infrastructure in a regulated domain, where being wrong is expensive.
       </>
     )
   }

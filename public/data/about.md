@@ -1,16 +1,33 @@
-I'm Austin, Director of Engineering at [Fundrise](https://fundrise.com), where I lead the team building
-[RealAI](https://realai.com), Fundrise's AI-powered real estate platform. Earlier at Fundrise, I architected ACH
-payments infrastructure processing $1B+ a year and shipped Equitize, our private-securities platform, from scratch.
+I'm Austin. I build software at the intersection of applied AI and financial infrastructure.
 
-Before Fundrise, I sharpened my skills at [Travelers](https://travelers.com), working on proprietary software, rating
-software, and machine learning projects that deepened my technical expertise.
+I'm Director of Engineering at [Fundrise](https://fundrise.com), leading the engineering behind our
+AI-enabled products — including [RealAI](https://realai.com) — and still doing most of the design,
+implementation, and review myself. The title is newer than the work: I've been at Fundrise since 2019 and
+have spent most of that time as the person actually building the thing.
 
-I
-also work with and contribute to open source software — including `tool_choice` support and prompt cache management
-in [Spring AI](https://github.com/spring-projects/spring-ai)'s Anthropic integration.
+Most of what I've done has been zero-to-one. [RealAI](https://realai.com) went from an early prototype to a
+launched product; before that, Equitize went from a concept to the private-securities platform Fundrise
+runs on. The pattern is usually the same — talk through the idea with the people who want it, build a
+proof of concept quickly enough that we can argue with something real, then take the parts that survive
+into production and own them once they're carrying live traffic and real money.
 
-Outside of work, I’m an avid podcast listener, enjoying shows
-like [Acquired](https://www.acquired.fm), [Invest Like the Best](https://joincolossus.com/series/invest-like-the-best/),
-and [Onward](https://fundrise.com/investor-update/695/view). I also enjoy listening to music from artists
-like [Marsh](https://www.marshmusician.com/), [Above & Beyond](https://www.aboveandbeyond.nu/),
-and [Enamour](https://www.enamourmusic.com/).
+Underneath all of it is a decade of infrastructure work in a regulated domain: ACH processing handling
+$1B+ a year, a [Stripe](https://stripe.com) debit funding integration, KYC and investment approval
+workflows, share issuance and reconciliation. That background is why I'm careful about evaluation and
+failure modes in AI systems. When you've shipped software that moves other people's money, "it mostly
+works" is not a finished sentence.
+
+I contribute to open source where the work overlaps with what I'm building. Most recently that's been
+[Spring AI](https://github.com/spring-projects/spring-ai)'s Anthropic integration — `tool_choice` support
+for Claude function calling, and per-message TTL and cache-block controls for prompt caching, both merged
+into the framework.
+
+Before Fundrise I spent three years at [Travelers](https://travelers.com) on proprietary software, rating
+systems, and machine learning pipelines. I have an M.S. in Computer Science from
+[Towson](https://www.towson.edu) and a B.S. in Information Systems from [Maryland](https://umd.edu).
+
+Outside of work I'm an avid podcast listener — [Acquired](https://www.acquired.fm),
+[Invest Like the Best](https://joincolossus.com/series/invest-like-the-best/), and
+[Onward](https://fundrise.com/investor-update/695/view) — and I listen to a lot of
+[Marsh](https://www.marshmusician.com/), [Above & Beyond](https://www.aboveandbeyond.nu/), and
+[Enamour](https://www.enamourmusic.com/) while I write code.

@@ -29,13 +29,6 @@
   --color-accent-subtle: #ece0c9;
   --color-glow: #1f8f78;
 
-  /* Skill categories. Warm ramp drawn from the palette, teal reserved for AI. */
-  --color-cat-ai: #1f8f78;
-  --color-cat-lang: #93611f;
-  --color-cat-web: #9a5540;
-  --color-cat-data: #6b7546;
-  --color-cat-platform: #7d6a4e;
-
   --text-hero: clamp(2.4rem, 1.6rem + 3.2vw, 3.8rem);
   --text-display: clamp(1.9rem, 1.4rem + 2vw, 2.6rem);
   --text-section: 0.95rem;
@@ -62,12 +55,6 @@
   --color-accent-fg: #1a1509;
   --color-accent-subtle: #241d12;
   --color-glow: #7fd9c4;
-
-  --color-cat-ai: #7fd9c4;
-  --color-cat-lang: #c08a3e;
-  --color-cat-web: #b3705a;
-  --color-cat-data: #8a9463;
-  --color-cat-platform: #a08a6a;
 }
 
 @layer base {
@@ -134,6 +121,88 @@
   }
 }
 
+/*
+ * Print. Also the source for the downloadable resume PDF, which is rendered
+ * from /resume by scripts/build-resume-pdf.mjs — so the document and the page
+ * can never say different things.
+ *
+ * The palette is forced back to light regardless of data-theme: the dark
+ * theme prints as a solid ink block, and Chrome's print-to-PDF honours
+ * background colors when asked to.
+ */
+@media print {
+  :root,
+  [data-theme='dark'] {
+    --color-bg: #ffffff;
+    --color-panel: #ffffff;
+    --color-fg: #000000;
+    --color-muted: #26211a;
+    --color-faint: #4a4238;
+    --color-rule: #c8c0b2;
+    --color-accent: #6b4715;
+    --color-accent-soft: #6b4715;
+    --color-accent-subtle: #ffffff;
+    color-scheme: light;
+  }
+
+  @page {
+    margin: 0.5in 0.55in;
+  }
+
+  /* Everything on the page is sized in rem off this, so one number sets the
+     density of the whole document. At the screen default the resume ran to
+     five pages, which is too long for what it contains. */
+  html {
+    font-size: 11.5px;
+  }
+
+  body {
+    background: #ffffff;
+  }
+
+  /* Site chrome carries nothing into a printed document. */
+  header:has(nav[aria-label='Main']),
+  footer,
+  .skip-link,
+  [data-print-hide] {
+    display: none !important;
+  }
+
+  main {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+
+  /* Keep a role and its bullets together rather than orphaning a heading at
+     the foot of a page. Scoped to the individual entry on purpose: applied to
+     the whole company block it was taller than a page, so the break moved to
+     the top of the block and left the previous page half empty. */
+  article {
+    break-inside: avoid;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    break-after: avoid;
+  }
+
+  section {
+    padding-block: 0.85rem !important;
+  }
+
+  ul,
+  ol {
+    margin-block: 0.35rem !important;
+  }
+}
+
 /* Prose reads from the palette tokens, which already flip on data-theme —
    so /about needs no dark:prose-invert. Deliberately unlayered: the typography
    plugin defines .prose in the utilities layer, which would otherwise win. */
@@ -159,6 +228,28 @@
 .prose :where(a):not(:where(.not-prose *)) {
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
+}
+
+/* Keyboard-only escape past the nav. Off-screen until focused, then pinned
+   over the sticky header. */
+@utility skip-link {
+  position: fixed;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 100;
+  translate: 0 -150%;
+  border: 1px solid var(--color-accent);
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  padding: 0.625rem 1.125rem;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  &:focus-visible {
+    translate: 0 0;
+  }
 }
 
 /* The uppercase mono micro-label used for eyebrows, section kickers and nav. */

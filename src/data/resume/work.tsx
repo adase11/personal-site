@@ -35,28 +35,29 @@ const work: IWorkExperience[] = [
       "Leading RealAI's rebuild onto Next.js ahead of its next public " +
       "release, alongside Fundrise's other AI-enabled products.",
     summary:
-      'Director of Engineering at [Fundrise](https://fundrise.com/), leading engineering strategy and teams building AI-enabled products including [RealAI](https://realai.com).',
+      'Engineering direction for AI-enabled products at [Fundrise](https://fundrise.com/), including [RealAI](https://realai.com) — hands-on through design, implementation, and review.',
     highlights: [
       "Leading RealAI's rebuild from Vue.js/Java onto Next.js, TypeScript, and Vercel ahead of an expanded public release.",
-      'Built and mentored engineering leadership.'
+      'Own the technical direction for our AI-enabled products: model selection, prompt and context architecture, tool use, and how we evaluate output quality before it reaches users.',
+      'Work directly with product and company leadership to take concepts from prototype to production systems.'
     ]
   },
   {
     name: 'Fundrise',
-    position: 'Lead Software Engineer | Engineering Manager',
+    position: 'Lead Software Engineer & Engineering Manager',
     url: 'https://fundrise.com',
     startDate: '2022-01-01',
     endDate: '2025-12-31',
     blurb:
       'Took RealAI from early prototype through launch, and shipped Equitize.',
     summary:
-      "Led engineering team shipping new products, including [RealAI](https://realai.com), Fundrise's flagship AI product.",
+      "Led the engineering shipping new products, including [RealAI](https://realai.com), Fundrise's flagship AI product.",
     highlights: [
-      'Built AI-enabled web applications using modern stack (TypeScript, React, Vue3, Java, Spring Boot, PostgreSQL, AWS).',
-      'Architected and shipped [RealAI](https://realai.com) from conception to launch, establishing technical roadmap and modern AI/ML practices.',
+      'Architected and shipped [RealAI](https://realai.com) from conception to launch, establishing the technical roadmap and our LLM engineering practices.',
+      'Built AI-enabled web applications on TypeScript, React, Vue 3, Java, Spring Boot, PostgreSQL, and AWS.',
       "Contributed `tool_choice` support and prompt cache management to [Spring AI](https://github.com/spring-projects/spring-ai)'s Anthropic integration, both merged into the framework.",
-      'Shipped Equitize product from conception to launch, scaling to millions in transaction volume.',
-      'Adopted modern dev tools ([Testcontainers](https://testcontainers.com/), [Retool](https://retool.com/), [Auth0](https://auth0.com/), Java 21, [JOOQ](https://www.jooq.org/), [GraphQL](https://graphql.org/)) to reduce development friction and improve team velocity.'
+      'Shipped the Equitize product from conception to launch, scaling to millions in transaction volume.',
+      'Adopted modern dev tooling ([Testcontainers](https://testcontainers.com/), [Retool](https://retool.com/), [Auth0](https://auth0.com/), Java 21, [JOOQ](https://www.jooq.org/), [GraphQL](https://graphql.org/)) to reduce development friction and improve team velocity.'
     ]
   },
   {
@@ -131,5 +132,48 @@ const work: IWorkExperience[] = [
     ]
   }
 ];
+
+export interface ICompanyHistory {
+  name: string;
+  url: string;
+  /** Roles at this company, most recent first. */
+  roles: IWorkExperience[];
+  startDate: string;
+  endDate?: string;
+}
+
+/**
+ * Collapses the flat position list into one block per employer.
+ *
+ * Rendered flat, seven positions across two companies read as seven jobs and
+ * the reader has to reconstruct the tenure themselves. Grouped, the shape of
+ * the career — one company since 2019, four roles inside it — is legible at a
+ * glance. Insertion order is preserved, so the list stays newest-first.
+ */
+export const byCompany = (positions: IWorkExperience[]): ICompanyHistory[] => {
+  const companies = new Map<string, ICompanyHistory>();
+
+  for (const position of positions) {
+    const existing = companies.get(position.name);
+
+    if (!existing) {
+      companies.set(position.name, {
+        name: position.name,
+        url: position.url,
+        roles: [position],
+        startDate: position.startDate,
+        endDate: position.endDate
+      });
+      continue;
+    }
+
+    existing.roles.push(position);
+    // Positions arrive newest-first, so each subsequent one is the earlier
+    // start; the end date is whatever the newest role carried.
+    existing.startDate = position.startDate;
+  }
+
+  return [...companies.values()];
+};
 
 export default work;

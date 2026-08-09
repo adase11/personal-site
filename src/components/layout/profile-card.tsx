@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import ContactIcons from '@/components/ui/contact-icons';
-import { bio, email, location, name, role } from '@/data/bio';
+import { bio, email, location, name, title } from '@/data/bio';
 
 const ProfileCard = () => (
   <aside className="border-t border-rule pt-11">
@@ -9,14 +9,14 @@ const ProfileCard = () => (
       <Image
         priority
         src="/images/me.jpeg"
-        alt=""
+        alt={name}
         width={96}
         height={96}
         className="size-16 object-cover"
       />
       <div className="min-w-0">
         <h2 className="font-serif text-lg">{name}</h2>
-        <p className="mt-1 font-mono text-[0.76rem] text-faint">{role}</p>
+        <p className="mt-1 font-mono text-[0.76rem] text-faint">{title}</p>
         <p className="font-mono text-[0.76rem] text-faint">{location}</p>
       </div>
     </div>
